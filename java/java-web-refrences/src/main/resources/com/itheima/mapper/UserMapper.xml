@@ -5,5 +5,7 @@
         select *
         from tb_user;
     </select>
-    <select id="selectById" resultType="com.itheima.pojo.User"></select>
+    <select id="selectById" parameterType="int" resultType="com.itheima.pojo.User">
+        select * from tb_user where id = #{id};
+    </select>
 </mapper>
