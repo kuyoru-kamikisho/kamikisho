@@ -1,16 +1,25 @@
 <template>
   <v-app id="app">
+
     <NavigationBar/>
+
+    <v-main>
+      <LoginPage/>
+    </v-main>
+
   </v-app>
 </template>
 
 <script>
 import "./assets/global/css-less/global.less"
 import NavigationBar from "@/components/index/NavigationBar";
+import LoginPage from "@/components/index/LoginPage";
+
 export default {
   name: 'App',
   components: {
     NavigationBar,
+    LoginPage
   },
 
   data: () => ({
