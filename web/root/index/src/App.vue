@@ -1,6 +1,8 @@
 <template>
   <v-app id="app">
 
+    <CursorCollimator/>
+
     <NavigationBar/>
 
     <v-main>
@@ -12,14 +14,18 @@
 
 <script>
 import "./assets/global/css-less/global.less"
+import "./assets/global/css-less/effects.less"
 import NavigationBar from "@/components/index/NavigationBar";
 import LoginPage from "@/components/index/LoginPage";
+import CursorCollimator from "@/components/global/CursorCollimator";
+import "./assets/global/js-effects/sakura-float"
 
 export default {
   name: 'App',
   components: {
     NavigationBar,
-    LoginPage
+    LoginPage,
+    CursorCollimator
   },
 
   data: () => ({

@@ -10,14 +10,14 @@
       >
         <v-img
             class="k-absolute img-move k-top-0 k-z-index-n1"
-            src="../../assets/index/logincard/ヴラディレーナ・ミリーゼ.jpg"
-            lazy-src="../../assets/index/logincard/ヴラディレーナ・ミリーゼ-64.jpg"
+            src="../../assets/index/logincard/BuradirenaMiriize.jpg"
+            lazy-src="../../assets/index/logincard/BuradirenaMirize-64.jpg"
         ></v-img>
       </v-card>
 
       <v-form
           ref="formLogin"
-          method="get"
+          method="post"
           action="/demo1"
           v-show="displayLogin"
           class="px-8 py-6 form-class"
@@ -36,6 +36,7 @@
             label="约稿ID"
             :rules="[rules.loginID]"
             type="text"
+            v-model="queryData.queryId"
         ></v-text-field>
 
         <v-text-field
@@ -48,11 +49,13 @@
             hide-details="auto"
             label="密码"
             type="password"
+            v-model="queryData.queryPwd"
         ></v-text-field>
 
         <v-btn
             dark
-            type="submit"
+            type="button"
+            @click="query"
         >
           查询
         </v-btn>
@@ -68,6 +71,7 @@
       </v-form>
 
       <v-form
+          ref="formRegister"
           v-show="displayRegister"
           class="px-8 py-6 form-class"
           method="post"
@@ -85,6 +89,7 @@
             label="昵称"
             :rules="[rules.required,rules.counter]"
             type="text"
+            v-model="registerData.userName"
         ></v-text-field>
 
         <v-text-field
@@ -96,8 +101,7 @@
             color="deep-purple lighten-1"
             hide-details="auto"
             label="设置登录密码"
-            :value="pwd1"
-            v-model="pwd1"
+            v-model="registerData.password"
             :rules="[rules.pwdRegister]"
             type="password"
         ></v-text-field>
@@ -111,8 +115,7 @@
             color="green"
             hide-details="auto"
             label="确认登录密码"
-            :value="pwd2"
-            v-model="pwd2"
+            v-model="registerData.pwdCheck"
             :rules="[checkPwd]"
             type="password"
         ></v-text-field>
@@ -128,6 +131,7 @@
             label="您的有效邮箱地址，用于接收密码等信息"
             :rules="[rules.email]"
             type="text"
+            v-model="registerData.mailAddress"
         ></v-text-field>
 
         <v-text-field
@@ -141,6 +145,7 @@
             label="以何种方式提供反馈与接收反馈"
             :rules="[rules.contactor]"
             type="text"
+            v-model="registerData.feedbackMethod"
         ></v-text-field>
 
         <v-text-field
@@ -154,6 +159,7 @@
             label="您能接受的最终交付日期"
             :rules="[rules.deadline]"
             type="text"
+            v-model="registerData.deadLine"
         ></v-text-field>
 
         <v-select
@@ -165,6 +171,7 @@
             :items="transactionTypes"
             item-text="type"
             item-value="abbr"
+            v-model="registerData.illustType"
         ></v-select>
 
         <v-select
@@ -176,6 +183,7 @@
             :items="backgroundRequired"
             item-text="type"
             item-value="abbr"
+            v-model="registerData.background"
         ></v-select>
 
         <v-select
@@ -187,6 +195,7 @@
             :items="budget"
             item-text="type"
             item-value="abbr"
+            v-model="registerData.budget"
         ></v-select>
 
         <v-select
@@ -198,6 +207,7 @@
             :items="authorizedRelease"
             item-text="type"
             item-value="abbr"
+            v-model="registerData.authorizedRelease"
         ></v-select>
 
         <v-select
@@ -209,6 +219,7 @@
             :items="maskType"
             item-text="type"
             item-value="abbr"
+            v-model="registerData.maskType"
         ></v-select>
 
         <v-select
@@ -222,6 +233,7 @@
             :items="paymentInstrument"
             item-text="type"
             item-value="abbr"
+            v-model="registerData.paymentInstrument"
         ></v-select>
 
         <v-select
@@ -235,9 +247,11 @@
             :items="imgFormat"
             item-text="type"
             item-value="abbr"
+            v-model="registerData.imgFormat"
         ></v-select>
 
         <v-textarea
+            v-model="registerData.comments"
             type="text"
             prepend-inner-icon="mdi-archive-edit-outline"
             label="备注/绘制要求"
@@ -252,7 +266,8 @@
 
         <v-btn
             dark
-            type="submit"
+            type="button"
+            @click="register"
         >
           提交
         </v-btn>
@@ -271,6 +286,8 @@
 </template>
 
 <script>
+import axios from "axios";
+
 export default {
   name: "LoginPage",
 
@@ -340,6 +357,28 @@ export default {
       {type: "其它", abbr: "else"},
     ],
 
+    registerData: {
+      userName: "",
+      password: "",
+      pwdCheck: "",
+      mailAddress: "",
+      feedbackMethod: "",
+      deadLine: "",
+      illustType: "",
+      background: "",
+      budget: "",
+      authorizedRelease: "",
+      maskType: "",
+      paymentInstrument: "",
+      imgFormat: "",
+      comments: ""
+    },
+
+    queryData: {
+      queryId: "",
+      queryPwd: ""
+    },
+
     rules: {
       required: value => !!value || '不可以为空哦',
       counter: value => value.length <= 20 || '最长不可以超过20个字符なのだ！',
@@ -368,18 +407,33 @@ export default {
 
   methods: {
     checkPwd() {
-      if (this.$data.pwd1 != this.$data.pwd2)
+      if (this.$data.registerData.password
+          != this.$data.registerData.pwdCheck)
         return "两次密码输入不一致"
       else
         return true
     },
-    submit(){
-      this.$refs.formLogin.querySelector('form').submit()
-      this.$data.submitDisabled=true
-      setTimeout(function () {
-        this.$data.submitDisabled=false
-      },60000)
-
+    register() {
+      axios({
+        url: "/demo1",
+        method: "post",
+        baseURL: "http://localhost/ajax_refrence_war/",
+        data: this.$data.registerData
+      }).then(function (response) {
+        if (response.data == "Register success.") {
+          alert("提交成功。")
+        } else {
+          alert("提交失败。")
+        }
+      })
+    },
+    query() {
+      axios({
+        url: "/demo1",
+        method: "post",
+        baseURL: "http://localhost/ajax_refrence_war/",
+        data: this.$data.queryData
+      })
     },
     test() {
       alert()
