@@ -39,9 +39,9 @@ export default {
   font-family: "汉仪文黑-85W";
   src: url("assets/global/font-family/汉仪文黑-85W.TTF");
 }
-#app{
+
+#app {
   font-family: sans-serif;
-  color: black;
   -webkit-font-smoothing: antialiased;
 }
 </style>

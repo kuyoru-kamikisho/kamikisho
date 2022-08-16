@@ -1,6 +1,15 @@
 <template>
   <div id="NavigationBar">
-    <v-app-bar short tile app clipped-left hide-on-scroll fixed fade-img-on-scroll>
+    <v-app-bar
+        class="px-4"
+        short
+        tile
+        app
+        clipped-left
+        hide-on-scroll
+        fixed
+        fade-img-on-scroll
+    >
 
       <v-app-bar-nav-icon>
         <v-img
@@ -20,7 +29,10 @@
         <v-tab>联系方式</v-tab>
         <v-tab>加入我们</v-tab>
         <v-tab>
-          <v-icon color="red accent-3">mdi-coffee</v-icon>
+          <v-icon
+              color="red
+              accent-3"
+          >mdi-coffee</v-icon>
           排单
         </v-tab>
       </v-tabs>
@@ -35,7 +47,7 @@ export default {
   name: 'NavigationBar',
   props: {},
   data: () => ({
-    myInfo: "NavigationBar.vue"
+    myInfo: "NavigationBar.vue",
   }),
   methods: {
     sendit() {

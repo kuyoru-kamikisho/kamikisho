@@ -16,10 +16,11 @@
       </v-card>
 
       <v-form
-          ref="formLogin"
+          ref="formQuery"
           method="post"
           action="/demo1"
           v-show="displayLogin"
+          v-model="valid1"
           class="px-8 py-6 form-class"
       >
 
@@ -172,6 +173,7 @@
             item-text="type"
             item-value="abbr"
             v-model="registerData.illustType"
+            :rules="[rules.illustType]"
         ></v-select>
 
         <v-select
@@ -184,6 +186,7 @@
             item-text="type"
             item-value="abbr"
             v-model="registerData.background"
+            :rules="[rules.background]"
         ></v-select>
 
         <v-select
@@ -208,6 +211,7 @@
             item-text="type"
             item-value="abbr"
             v-model="registerData.authorizedRelease"
+            :rules="[rules.authorizedRelease]"
         ></v-select>
 
         <v-select
@@ -248,6 +252,7 @@
             item-text="type"
             item-value="abbr"
             v-model="registerData.imgFormat"
+            :rules="[rules.imgFormat]"
         ></v-select>
 
         <v-textarea
@@ -264,10 +269,22 @@
 
         </v-textarea>
 
+        <v-radio-group>
+          <v-radio
+              class="text-body-2"
+              label='选中此处即表明您已完整阅读并了解《约稿规则与流程》中阐述的各个事项'
+              color="red darken-3"
+              value="yes"
+              @click="know=false"
+          ></v-radio>
+        </v-radio-group>
+
         <v-btn
-            dark
+            color="grey darken-4"
+            class="white--text"
             type="button"
             @click="register"
+            :disabled="know"
         >
           提交
         </v-btn>
@@ -297,6 +314,9 @@ export default {
     displayLogin: false,
     pwd1: "",
     pwd2: "",
+    valid1: true,
+    valid2: true,
+    know:true,
 
     transactionTypes: [
       {type: '插画', abbr: 'Illustration'},
@@ -371,7 +391,7 @@ export default {
       maskType: "",
       paymentInstrument: "",
       imgFormat: "",
-      comments: ""
+      comments: "",
     },
 
     queryData: {
@@ -381,6 +401,10 @@ export default {
 
     rules: {
       required: value => !!value || '不可以为空哦',
+      illustType:value=>!!value||'您未选择约稿类型',
+      background:value=>!!value||'是否需要背景？',
+      authorizedRelease:value=>!!value||'您未选择授予画师何种发布权限',
+      imgFormat:value=>!!value||'您未选择最终交付需要的文件格式',
       counter: value => value.length <= 20 || '最长不可以超过20个字符なのだ！',
       email: value => {
         const pattern = /^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/
@@ -414,26 +438,24 @@ export default {
         return true
     },
     register() {
-      axios({
-        url: "/demo1",
-        method: "post",
-        baseURL: "http://localhost/ajax_refrence_war/",
-        data: this.$data.registerData
-      }).then(function (response) {
-        if (response.data == "Register success.") {
-          alert("提交成功。")
-        } else {
-          alert("提交失败。")
-        }
-      })
+      if (this.$refs.formRegister.validate()) {
+        axios({
+          url: "/demo1",
+          method: "post",
+          baseURL: "http://localhost/ajax_refrence_war/",
+          data: this.$data.registerData
+        })
+      }
     },
     query() {
-      axios({
-        url: "/demo1",
-        method: "post",
-        baseURL: "http://localhost/ajax_refrence_war/",
-        data: this.$data.queryData
-      })
+      if (this.$refs.formQuery.validate()) {
+        axios({
+          url: "/demo1",
+          method: "post",
+          baseURL: "http://localhost/ajax_refrence_war/",
+          data: this.$data.queryData
+        })
+      }
     },
     test() {
       alert()
@@ -474,7 +496,6 @@ export default {
   transform-style: preserve-3d;
   perspective: 5000px;
 }
-
 </style>
 
 
