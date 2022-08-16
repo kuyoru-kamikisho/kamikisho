@@ -6,7 +6,11 @@
     <NavigationBar/>
 
     <v-main>
-      <LoginPage/>
+      <transition enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutRight">
+        <LoginPage v-show="this.$store.state.navbar[5]"/>
+      </transition>
+
+      <HomePage/>
     </v-main>
 
   </v-app>
@@ -18,6 +22,7 @@ import "./assets/global/css-less/effects.less"
 import NavigationBar from "@/components/index/NavigationBar";
 import LoginPage from "@/components/index/LoginPage";
 import CursorCollimator from "@/components/global/CursorCollimator";
+import HomePage from "@/components/index/HomePage";
 import "./assets/global/js-effects/sakura-float"
 
 export default {
@@ -25,7 +30,8 @@ export default {
   components: {
     NavigationBar,
     LoginPage,
-    CursorCollimator
+    CursorCollimator,
+    HomePage
   },
 
   data: () => ({

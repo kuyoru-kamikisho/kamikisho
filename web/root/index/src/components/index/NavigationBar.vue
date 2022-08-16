@@ -19,19 +19,18 @@
       </v-app-bar-nav-icon>
 
       <v-tabs show-arrows class="" background-color="transparent" color="red accent-3" centered align-with-title>
-        <v-tab>首页</v-tab>
-        <v-tab @click="sendit">规则与流程</v-tab>
-        <v-tab>往期作品</v-tab>
+        <v-tab @click="navCommit(0)">首页</v-tab>
+        <v-tab @click="navCommit(1)">规则与流程</v-tab>
+        <v-tab @click="navCommit(2)">往期作品</v-tab>
         <v-tab href="https://www.pixiv.net/users/17723835">Pixiv</v-tab>
         <v-tab href="https://twitter.com/kuyoru_illust">Twitter</v-tab>
         <v-tab href="https://bcy.net/u/1477268">半次元</v-tab>
         <v-tab href="https://space.bilibili.com/85638760">Bilibili</v-tab>
-        <v-tab>联系方式</v-tab>
-        <v-tab>加入我们</v-tab>
-        <v-tab>
+        <v-tab @click="navCommit(3)">联系方式</v-tab>
+        <v-tab @click="navCommit(4)">加入我们</v-tab>
+        <v-tab @click="navCommit(5)">
           <v-icon
-              color="red
-              accent-3"
+              color="red accent-3"
           >mdi-coffee</v-icon>
           排单
         </v-tab>
@@ -41,8 +40,6 @@
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
   name: 'NavigationBar',
   props: {},
@@ -50,20 +47,10 @@ export default {
     myInfo: "NavigationBar.vue",
   }),
   methods: {
-    sendit() {
-      let formData = {
-        id: 158,
-        name: "LiMing",
-        password: "root@1234"
-      }
-      axios.get("http://localhost/ajax_refrence_war/demo1", {
-        params: formData
-      }).then(function (response) {
-        if (response.data == "success") {
-          alert("响应：" + response.data + response.status + response.headers);
-        }
-        console.log("send:")
-        console.log(response.data)
+    navCommit(n){
+      this.$store.commit({
+        type: 'nav',
+        navchoose:n
       })
     }
   }
