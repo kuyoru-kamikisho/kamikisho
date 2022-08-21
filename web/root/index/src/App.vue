@@ -6,11 +6,15 @@
     <NavigationBar/>
 
     <v-main>
+
+      <transition enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutLeft">
+        <HomePage v-show="this.$store.state.navbar[0]"/>
+      </transition>
+
       <transition enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutRight">
         <LoginPage v-show="this.$store.state.navbar[5]"/>
       </transition>
 
-      <HomePage/>
     </v-main>
 
   </v-app>
