@@ -7,7 +7,7 @@
 
     <v-main>
 
-      <transition enter-active-class="animated fadeInLeft" leave-active-class="animated fadeOutLeft">
+      <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
         <HomePage v-show="this.$store.state.navbar[0]"/>
       </transition>
 
