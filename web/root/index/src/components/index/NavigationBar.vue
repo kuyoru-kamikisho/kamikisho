@@ -1,8 +1,8 @@
 <template>
   <div id="NavigationBar">
     <v-app-bar
-        class="px-4"
         short
+        class="px-4"
         tile
         app
         clipped-left
@@ -18,7 +18,7 @@
         />
       </v-app-bar-nav-icon>
 
-      <v-tabs show-arrows class="" background-color="transparent" color="red accent-3" centered align-with-title>
+      <v-tabs show-arrows background-color="transparent" color="red accent-3" centered align-with-title>
         <v-tab @click="navCommit(0)">首页</v-tab>
         <v-tab @click="navCommit(1)">规则与流程</v-tab>
         <v-tab @click="navCommit(2)">往期作品</v-tab>

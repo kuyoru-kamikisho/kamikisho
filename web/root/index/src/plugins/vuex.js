@@ -5,7 +5,7 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        navbar: [true, false, false, false, false, false]
+        navbar: [true, false, false, false, false, false],
     },
     mutations: {
         nav(state, payload) {

@@ -8,11 +8,11 @@
     <v-main>
 
       <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
-        <HomePage v-show="this.$store.state.navbar[0]"/>
+        <HomePage v-show="this.$store.state.navbar[0]"></HomePage>
       </transition>
 
       <transition enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutRight">
-        <LoginPage v-show="this.$store.state.navbar[5]"/>
+        <LoginPage v-show="this.$store.state.navbar[5]"></LoginPage>
       </transition>
 
     </v-main>
@@ -26,6 +26,7 @@ import "./assets/global/css-less/effects.less"
 import NavigationBar from "@/components/index/NavigationBar";
 import LoginPage from "@/components/index/LoginPage";
 import CursorCollimator from "@/components/global/CursorCollimator";
+import SearchBar from "@/components/index/SearchBar";
 import HomePage from "@/components/index/HomePage";
 import "./assets/global/js-effects/sakura-float"
 
@@ -35,6 +36,7 @@ export default {
     NavigationBar,
     LoginPage,
     CursorCollimator,
+    SearchBar,
     HomePage
   },
 
