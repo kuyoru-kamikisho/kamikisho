@@ -5,7 +5,8 @@ Vue.use(Vuex)
 
 const store = new Vuex.Store({
     state: {
-        navbar: [true, false, false, false, false, false],
+        navbar: [true, false, false, false, false],
+        homepageExtra: true
     },
     mutations: {
         nav(state, payload) {
@@ -14,6 +15,9 @@ const store = new Vuex.Store({
                 state.navbar[payload.navchoose] = true
             }
         },
+        homepageEx(state) {
+            state.homepageExtra = !state.homepageExtra
+        }
     }
 })
 export default store

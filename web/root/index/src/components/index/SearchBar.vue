@@ -1,5 +1,5 @@
 <template>
-    <v-card width="100%" tile color="transparent" class="mx-auto" elevation="0">
+    <v-card width="100%" tile color="transparent" class="mx-auto mb-8" elevation="0">
       <v-form>
         <template v-for="(item,index) in searchers">
           <v-row v-show="item.showif" align-content="center" justify="center" no-gutters dense>
@@ -127,6 +127,7 @@ export default {
 <style scoped lang="less">
 .inputer {
   font-family: "汉仪文黑-85W", sans-serif;
+  letter-spacing: 1.21rem;
 
   &::placeholder {
     color: rgba(86, 86, 86, 0.47);
@@ -135,7 +136,10 @@ export default {
   background-color: transparent;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.43);
 }
-
+input[type="search"]{
+  font-family: "汉仪文黑-85W", sans-serif;
+  letter-spacing: 1.6rem;
+}
 .k-btn {
   border: 1px solid rgba(168, 167, 167, 0.82);
   box-sizing: border-box;

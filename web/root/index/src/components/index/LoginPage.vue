@@ -101,7 +101,7 @@
             clearable
             color="deep-purple lighten-1"
             hide-details="auto"
-            label="设置登录密码"
+            label="设置订单密码"
             v-model="registerData.password"
             :rules="[rules.pwdRegister]"
             type="password"
@@ -197,7 +197,7 @@
             type="radio"
             :items="budget"
             item-text="type"
-            item-value="abbr"
+            item-value="type"
             v-model="registerData.budget"
         ></v-select>
 
@@ -337,13 +337,13 @@ export default {
     ],
 
     budget: [
-      {type: '10-50', abbr: '50'},
-      {type: '50-100', abbr: '100'},
-      {type: '100-200', abbr: '200'},
-      {type: '200-500', abbr: '400'},
-      {type: '500-1000', abbr: '800'},
-      {type: '1000-2000', abbr: '1800'},
-      {type: '2000+', abbr: '2000+'},
+      {type: '10-50'},
+      {type: '50-100'},
+      {type: '100-200'},
+      {type: '200-500'},
+      {type: '500-1000'},
+      {type: '1000-2000'},
+      {type: '2000+'}
     ],
 
     imgFormat: [
@@ -411,8 +411,8 @@ export default {
         return pattern.test(value) || '格式示例：123abc@abc.com'
       },
       contactor: value => {
-        const cPattern = /^[^\s]{1,10}\s=\s[^\s]{1,20}$/
-        return cPattern.test(value) || "格式示例：微信 = 123456789"
+        const cPattern = /^[^\s]{1,10}=[^\s]{1,20}$/
+        return cPattern.test(value) || "格式示例：微信=123456789"
       },
       deadline: value => {
         const dPattern = /^\d{4}-\d{1,2}-\d{1,2}\s\d{1,2}:\d{1,2}:\d{1,2}$/

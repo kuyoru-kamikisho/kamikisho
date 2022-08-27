@@ -12,7 +12,7 @@
       </transition>
 
       <transition enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutRight">
-        <LoginPage v-show="this.$store.state.navbar[5]"></LoginPage>
+        <LoginPage v-show="this.$store.state.navbar[4]"></LoginPage>
       </transition>
 
     </v-main>

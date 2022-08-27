@@ -11,27 +11,58 @@
         fade-img-on-scroll
     >
 
-      <v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="homepageExCommit">
         <v-img
-            class="k-absolute k-cursor-pointer"
-            width="46px" src="../../assets/index/navbar/imgs/nav-bar-avtar.png"
+            class="k-nav-icon k-absolute k-cursor-pointer"
+            width="142px" src="../../assets/index/homepage/sitebar-icon.png"
         />
       </v-app-bar-nav-icon>
 
-      <v-tabs show-arrows background-color="transparent" color="red accent-3" centered align-with-title>
-        <v-tab @click="navCommit(0)">首页</v-tab>
-        <v-tab @click="navCommit(1)">规则与流程</v-tab>
-        <v-tab @click="navCommit(2)">往期作品</v-tab>
-        <v-tab href="https://www.pixiv.net/users/17723835">Pixiv</v-tab>
-        <v-tab href="https://twitter.com/kuyoru_illust">Twitter</v-tab>
-        <v-tab href="https://bcy.net/u/1477268">半次元</v-tab>
-        <v-tab href="https://space.bilibili.com/85638760">Bilibili</v-tab>
-        <v-tab @click="navCommit(3)">联系方式</v-tab>
-        <v-tab @click="navCommit(4)">加入我们</v-tab>
-        <v-tab @click="navCommit(5)">
-          <v-icon
-              color="red accent-3"
-          >mdi-coffee</v-icon>
+      <v-tabs
+          show-arrows
+          background-color="transparent"
+          color="red accent-3"
+          centered
+          center-active
+          align-with-title
+      >
+        <v-tab href="#0" @click="navCommit(0)">
+          首页
+        </v-tab>
+        <v-tab href="#1" @click="navCommit(1)">
+          <v-icon color="purple accent-3">
+            mdi-language-xaml
+          </v-icon>
+          规则与流程
+        </v-tab>
+        <v-tab href="#2" @click="navCommit(2)">
+          <v-icon color="amber darken-1">
+            mdi-percent
+          </v-icon>
+          定价
+        </v-tab>
+        <v-tab href="#3" @click="navCommit(3)">
+          往期作品
+        </v-tab>
+        <v-tab href="https://www.pixiv.net/users/17723835">
+          Pixiv
+        </v-tab>
+        <v-tab href="https://twitter.com/kuyoru_illust">
+          <v-icon color="primary">
+            mdi-twitter
+          </v-icon>
+          Twitter
+        </v-tab>
+        <v-tab href="https://bcy.net/u/1477268">
+          半次元
+        </v-tab>
+        <v-tab href="https://space.bilibili.com/85638760">
+          Bilibili
+        </v-tab>
+        <v-tab href="#4" @click="navCommit(4)">
+          <v-icon color="red accent-3">
+            mdi-coffee
+          </v-icon>
           排单
         </v-tab>
       </v-tabs>
@@ -42,22 +73,40 @@
 <script>
 export default {
   name: 'NavigationBar',
-  props: {},
+  props: {whichTab: String},
+  computed:{
+  },
   data: () => ({
     myInfo: "NavigationBar.vue",
   }),
   methods: {
-    navCommit(n){
+    navCommit(n) {
       this.$store.commit({
         type: 'nav',
-        navchoose:n
+        navchoose: n
       })
+    },
+    homepageExCommit() {
+      this.$store.commit('homepageEx')
     }
   }
 }
 </script>
 
 <style scoped lang="less">
+.k-nav-icon {
+  transform: translateX(50px);
+  transition: clip-path .4s ease;
+}
+
+@media screen and (max-width: 1168px) {
+  .k-nav-icon {
+    transform: translateX(50px);
+    clip-path: polygon(0 0, 33% 0, 33% 100%, 0% 100%);
+    transition: clip-path .4s ease;
+  }
+}
+
 .img-clip {
   clip-path: polygon(0 0, 74% 0, 76% 100%, 0% 100%);
 }
