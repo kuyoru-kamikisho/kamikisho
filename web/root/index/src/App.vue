@@ -15,6 +15,10 @@
         <LoginPage v-show="this.$store.state.navbar[4]"></LoginPage>
       </transition>
 
+      <transition enter-active-class="k-animated k-bounceInDown" leave-active-class="k-animated k-bounceOutUp">
+        <ExtraPage v-show="this.$store.state.homepageExtra"></ExtraPage>
+      </transition>
+
     </v-main>
 
   </v-app>
@@ -22,13 +26,13 @@
 
 <script>
 import "./assets/global/css-less/global.less"
-import "./assets/global/css-less/effects.less"
+import "./assets/global/js-effects/sakura-float"
 import NavigationBar from "@/components/index/NavigationBar";
 import LoginPage from "@/components/index/LoginPage";
 import CursorCollimator from "@/components/global/CursorCollimator";
 import SearchBar from "@/components/index/SearchBar";
 import HomePage from "@/components/index/HomePage";
-import "./assets/global/js-effects/sakura-float"
+import ExtraPage from "@/components/index/ExtraPage";
 
 export default {
   name: 'App',
@@ -37,7 +41,8 @@ export default {
     LoginPage,
     CursorCollimator,
     SearchBar,
-    HomePage
+    HomePage,
+    ExtraPage
   },
 
   data: () => ({

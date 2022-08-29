@@ -19,7 +19,7 @@
           ref="formQuery"
           method="post"
           action="/demo1"
-          v-show="displayLogin"
+          v-show="this.$store.state.displayLogin"
           v-model="valid1"
           class="px-8 py-6 form-class"
       >
@@ -62,7 +62,7 @@
         </v-btn>
 
         <a
-            @click="displayRegister=true;displayLogin=false"
+            @click="showR"
             class="ml-8"
             href="javascript:void(0);"
         >
@@ -73,7 +73,7 @@
 
       <v-form
           ref="formRegister"
-          v-show="displayRegister"
+          v-show="this.$store.state.displayRegister"
           class="px-8 py-6 form-class"
           method="post"
           action="/demo2"
@@ -290,7 +290,7 @@
         </v-btn>
 
         <a
-            @click="displayRegister=false;displayLogin=true"
+            @click="showL"
             class="ml-8"
             href="javascript:void(0);"
         >
@@ -310,8 +310,6 @@ export default {
 
   data: () => ({
     submitDisabled: false,
-    displayRegister: true,
-    displayLogin: false,
     pwd1: "",
     pwd2: "",
     valid1: true,
@@ -457,8 +455,11 @@ export default {
         })
       }
     },
-    test() {
-      alert()
+    showL(){
+      this.$store.commit('showLogin')
+    },
+    showR(){
+      this.$store.commit('showRegister')
     }
   }
 }

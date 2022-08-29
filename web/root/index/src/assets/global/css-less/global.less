@@ -1,3 +1,6 @@
+@import "effects";
+@import "rewrite";
+
 .k-op-color-black-1{opacity: 1;color: black}
 .k-opacity-0{opacity: 0}
 .k-opacity-10{opacity: 0.1}
@@ -19,11 +22,10 @@
 .k-cursor-pointer{cursor: pointer}
 .k-element-penetrate{pointer-events: none}
 .k-x-transform-center{left: 50%;transform: translateX(-50%);}
-.k-y-transform-center{right: 50%;transform: translateY(-50%);}
+.k-y-transform-center{top: 50%;transform: translateY(-50%);}
 .k-top-0{top: 0}
 .k-right-0{right: 0}
 .k-left-0{left: 0}
-.k-bottom-0{bottom: 0}
 .k-bottom-0{bottom: 0}
 .k-z-index-n1{z-index: -1}
 .k-z-index-n2{z-index: -2}
@@ -33,12 +35,3 @@
 .k-z-index-2{z-index: 2}
 .k-z-index-4{z-index: 4}
 .k-z-index-8{z-index: 8}
-
-// 覆盖vuetify原生css
-.theme--light.v-tabs > .v-tabs-bar .v-tab:not(.v-tab--active){
-  color: black!important;
-  transition: color .4s ease;
-}
-.v-tab{
-  font-size: 15px!important;
-}

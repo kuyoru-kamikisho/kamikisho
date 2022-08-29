@@ -26,22 +26,22 @@
           center-active
           align-with-title
       >
-        <v-tab href="#0" @click="navCommit(0)">
+        <v-tab @click="navCommit(0)">
           首页
         </v-tab>
-        <v-tab href="#1" @click="navCommit(1)">
+        <v-tab @click="navCommit(1)">
           <v-icon color="purple accent-3">
             mdi-language-xaml
           </v-icon>
           规则与流程
         </v-tab>
-        <v-tab href="#2" @click="navCommit(2)">
+        <v-tab @click="navCommit(2)">
           <v-icon color="amber darken-1">
             mdi-percent
           </v-icon>
           定价
         </v-tab>
-        <v-tab href="#3" @click="navCommit(3)">
+        <v-tab @click="navCommit(3)">
           往期作品
         </v-tab>
         <v-tab href="https://www.pixiv.net/users/17723835">
@@ -59,7 +59,7 @@
         <v-tab href="https://space.bilibili.com/85638760">
           Bilibili
         </v-tab>
-        <v-tab href="#4" @click="navCommit(4)">
+        <v-tab @click="navCommit(4)">
           <v-icon color="red accent-3">
             mdi-coffee
           </v-icon>
@@ -73,9 +73,6 @@
 <script>
 export default {
   name: 'NavigationBar',
-  props: {whichTab: String},
-  computed:{
-  },
   data: () => ({
     myInfo: "NavigationBar.vue",
   }),
@@ -88,6 +85,29 @@ export default {
     },
     homepageExCommit() {
       this.$store.commit('homepageEx')
+      if (this.$store.state.homepageExtra === true) {
+        localStorage.setItem('k_home', 'on')
+      } else {
+        localStorage.setItem('k_home', 'off')
+      }
+    },
+
+  },
+
+  /**
+   * 记录是否已经切换过主页面的显示内容
+   */
+  beforeCreate() {
+    if (localStorage.getItem('k_home') === 'on') {
+      this.$store.commit({
+        type: "homepageInit",
+        k_home: true
+      })
+    } else {
+      this.$store.commit({
+        type: "homepageInit",
+        k_home: false
+      })
     }
   }
 }
@@ -95,7 +115,7 @@ export default {
 
 <style scoped lang="less">
 .k-nav-icon {
-  transform: translateX(50px);
+  transform: translateX(48px);
   transition: clip-path .4s ease;
 }
 
