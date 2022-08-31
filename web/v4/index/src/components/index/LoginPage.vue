@@ -1,5 +1,5 @@
 <template>
-  <v-container class="container-3d">
+  <v-container class="container-3d k-absolute k-x-transform-center">
 
     <v-card class="mb-16 mx-auto roll-180-x" width="420" tile elevation="10">
       <v-card
@@ -8,11 +8,10 @@
           elevation="0"
           class="height-shrink k-overflow-hidden"
       >
-        <v-img
-            class="k-absolute img-move k-top-0 k-z-index-n1"
+        <img
+            class="k-absolute img-move k-top-0"
             src="../../assets/index/logincard/BuradirenaMiriize.jpg"
-            lazy-src="../../assets/index/logincard/BuradirenaMirize-64.jpg"
-        ></v-img>
+        />
       </v-card>
 
       <v-form
@@ -486,6 +485,7 @@ export default {
 }
 
 .img-move {
+  width: 420px;
   animation: 30s linear .4s forwards img-moving;
 }
 

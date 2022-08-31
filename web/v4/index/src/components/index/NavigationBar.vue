@@ -9,12 +9,13 @@
         hide-on-scroll
         fixed
         fade-img-on-scroll
+        color="#f2f3f5c2"
     >
 
       <v-app-bar-nav-icon @click="homepageExCommit">
-        <v-img
-            class="k-nav-icon k-absolute k-cursor-pointer"
-            width="142px" src="../../assets/index/homepage/sitebar-icon.png"
+        <img
+            class="k-nav-icon k-absolute k-cursor-pointer k-nav-img k-z-index-1"
+            src="../../assets/index/homepage/sitebar-icon.png"
         />
       </v-app-bar-nav-icon>
 
@@ -84,6 +85,7 @@ export default {
       })
     },
     homepageExCommit() {
+      this.$store.commit('navCloseItem')
       this.$store.commit('homepageEx')
       if (this.$store.state.homepageExtra === true) {
         localStorage.setItem('k_home', 'on')
@@ -150,5 +152,8 @@ export default {
       background-color: #f51414;
     }
   }
+}
+.k-nav-img{
+  width: 142px;
 }
 </style>

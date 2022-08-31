@@ -21,6 +21,6 @@ export default {
 <style scoped lang="less">
 .k-container-ex{
   padding: 42px 0 32px 0;
-  background-color: white;
+  background-color: transparent;
 }
 </style>

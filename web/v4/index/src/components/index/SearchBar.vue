@@ -11,6 +11,7 @@
                   v-model="searchContent"
                   :value="searchContent"
                   :prepend-inner-icon="item.prependicon"
+                  background-color="#f0f8ff96"
                   rounded
                   solo
                   flat

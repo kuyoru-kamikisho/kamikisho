@@ -1,6 +1,8 @@
 <template>
   <v-app id="app">
 
+    <Background></Background>
+
     <CursorCollimator/>
 
     <NavigationBar/>
@@ -11,7 +13,7 @@
         <HomePage v-show="this.$store.state.navbar[0]"></HomePage>
       </transition>
 
-      <transition enter-active-class="animated fadeInRight" leave-active-class="animated fadeOutRight">
+      <transition enter-active-class="k-animated k-fadeInRight" leave-active-class="k-animated k-fadeOutRight">
         <LoginPage v-show="this.$store.state.navbar[4]"></LoginPage>
       </transition>
 
@@ -33,6 +35,7 @@ import CursorCollimator from "@/components/global/CursorCollimator";
 import SearchBar from "@/components/index/SearchBar";
 import HomePage from "@/components/index/HomePage";
 import ExtraPage from "@/components/index/ExtraPage";
+import Background from "@/components/index/Background";
 
 export default {
   name: 'App',
@@ -42,7 +45,8 @@ export default {
     CursorCollimator,
     SearchBar,
     HomePage,
-    ExtraPage
+    ExtraPage,
+    Background
   },
 
   data: () => ({

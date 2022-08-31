@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="author" content="kuyoru">
+	<meta name="description" content="是玖夜的小站哒! 为了让上网更加方便! " />
+	<meta name="keywords" content="首页,二次元,绘画,开发,设计,创意,动漫,游戏,索引,ANIME,ACG,pixiv,artist,design,painting,综合">
+	<link rel="shortcut icon" href="./favicon.ico">
+	<title>玖夜 | 想象, 远不止于此</title>
+	<link rel="preload" href="./css/position&style.css" as="style">
+	<link rel="preload" href="./js/c-nav__lists.js" as="script">
+	<link rel="stylesheet" href="./css/initial.css">
+	<link rel="stylesheet" href="./css/codescss.css">
+	<script src="./js/Vue2general.js"></script>
+	<script src="./js/preload&initial.js"></script>
+	<script src="./js/jquery-3.6.0.js"></script>
+	<!-- <script src="./js/v2.js"></script> -->
+</head>
+
+<body>
+	<div class="m-cursor" id="cursor">
+		<div class="c-circle"></div>
+		<span class="c-line"></span>
+		<span class="c-line"></span>
+		<span class="c-line"></span>
+		<span class="c-line"></span>
+		<span class="c-line"></span>
+		<span class="c-line"></span>
+		<span class="c-line"></span>
+		<span class="c-line"></span>
+	</div>
+	<link rel="stylesheet" href="./css/position&style.css">
+	<header class="h-side">
+		<div class="topper"><p>kuyoru</p><span>想象，不止与此</span><a href="https://github.com/kuyoru730/kuyoru.com"></a></div>
+		<div class="timecount" function="timeCount">
+			<div class="t-inner" id="t-inner" v-if="visiblity">
+				<p class="t-inner__index" v-text="indexP"></p>
+				<div class="t-inner__all clearfix">
+					<div class="t-inner__tbar">
+						<p v-text="indexD"></p>
+					</div>
+					<div class="t-inner__tbar">
+						<p v-text="indexH"></p>
+					</div>
+					<div class="t-inner__tbar">
+						<p v-text="indexM"></p>
+					</div>
+					<div class="t-inner__tbar">
+						<p v-text="indexS"></p>
+					</div>
+
+				</div>
+				<div class="vtc-line"></div>
+				<div class="t-inner__ctbar"></div>
+
+				<div class="n-time">
+					<div class="n-time__inner">
+						<div class="n-colons">
+							<div class="colon1" v-if="colon1">
+								<p v-text="colons1"></p>
+							</div>
+							<div class="colon2" v-if="colon2">
+								<p v-text="colons2"></p>
+							</div>
+
+						</div>
+						<div class="hours">
+							<p v-text="indexNh"></p>
+						</div>
+						<div class="minutes">
+							<p v-text="indexNm"></p>
+						</div>
+						<div class="seconds">
+							<p v-text="indexNs"></p>
+						</div>
+						<div class="milliseconds" v-if="isindexNms">
+							<p v-text="indexNms"></p>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="h-side__d"></div>
+		<div class="h-ctent__All">
+			<div class="searchbar__All">
+				<div class="h-search__g">
+					<div class="h-gs__bar">
+						<form action="https://www.google.com/search">
+							<input type="text" name="q" placeholder="Google" onfocus="this.placeholder=''" onblur="this.placeholder='Google'" maxlength="125" autocomplete="off" />
+							<input type="submit" value="search" />
+						</form>
+					</div>
+				</div>
+				<div class="h-search__b">
+					<div class="h-bs__bar">
+						<form action="https://www.baidu.com/s">
+							<input type="text" class="baidu" name="wd" maxlength="125" placeholder="Baidu" onfocus="this.placeholder=''" onblur="this.placeholder='Baidu'" autocomplete="off" />
+							<input type="submit" value="百度一下" />
+						</form>
+					</div>
+				</div>
+			</div>
+			<div id="common-websites" class="common-websites">
+				<ul class="c-w__inner">
+					<li class="c-w__items">
+						<p v-text="coomnp1" v-bind:class="thepbar1"></p><a v-bind:href="href1"></a>
+					</li>
+				</ul>
+			</div>
+			<div class="wrapper">
+				<p id="header"></p>
+				<div id="calendar"></div>
+			</div>
+			<div class="ipInformation">
+				<div class="ipaddress">
+					<p></p>
+				</div>
+				<div class="ipcode">
+					<p></p>
+				</div>
+				<div class="ipcity">
+					<p></p>
+				</div>
+				<p class="p-linear"></p>
+			</div>
+		</div>
+	</header>
+	<footer class="footer">
+		<div class="v-i">
+			<div class="music-inner">
+				<audio preload="auto" id="audio-bgm" class="audio-bgm" src="./music/Mwk-Redefinition_1.mp3" type="audio/mpeg" controls autoplay quality="high" loop>
+				</audio>
+				<div class="ico-music">
+					<img class="imgbtn-music" src="./img/musicstyle2-on.png" alt="btn">
+				</div>
+			</div>
+			<div class="video&img-box">
+				<img src="./img/bg_cover.blueArchive.png" alt="cover" class="top-bg-cover">
+				<video preload="auto" muted="muted" autoplay="autoplay" loop="loop" src="./vedio/miku_web.mp4" class="top-bg"></video>
+			</div>
+		</div>
+		<script>
+			var audiobgm=document.querySelector('#audio-bgm');
+			audiobgm.volume = 0.2;
+			var bgmbtn=document.querySelector('.ico-music');
+			var btnico=document.querySelector('.imgbtn-music');
+			var state=0;
+			audiobgm.autoplay=true;
+			audiobgm.load;
+			bgmbtn.addEventListener('click',function(e) {
+				if(state==0){
+					state++;
+					btnico.src = "./img/musicstyle2-off.png";
+					audiobgm.pause();
+				}else{
+					state=0;
+					btnico.src="./img/musicstyle2-on.png";
+					audiobgm.play();
+				}
+			})
+		</script>
+	</footer>
+	<!-- The header contains all the contents include A-Z -->
+	<div class="c-nav-wrap">
+		<!-- container -->
+		<div class="c-nav__inner">
+		</div>
+	</div>
+	<div class="container">
+		<img id="imgsider" class="img-responsive" v-bind:src="imgSrc" v-bind:alt="imgAlt" v-bind:author="imgAuthor" />
+		<!-- ---Background component--- -->
+		<div class="circle-container">
+			<div class="circle"></div>
+		</div>
+	</div>
+	<script src="./js/circles.js"></script>
+	<script src="./js/c-nav__lists.js"></script>
+	<script src="./js/vue_lists.js"></script>
+	<script src="https://pv.sohu.com/cityjson?ie=utf-8"></script>
+	<script>
+		var ipAdd = returnCitySN["cip"];
+		var ipCode = returnCitySN["cid"];
+		var ipCity = returnCitySN["cname"];
+		var ipaddP = document.querySelector('.ipaddress').querySelector('p');
+		var ipcodP = document.querySelector('.ipcode').querySelector('p');
+		var ipcitP = document.querySelector('.ipcity').querySelector('p');
+		ipaddP.innerHTML = "Your ip: " + ipAdd;
+		ipcodP.innerHTML = "Code: " + ipCode;
+		ipcitP.innerHTML = "City: " + ipCity;
+		document.addEventListener('load',function(){
+			audiobgm.play();
+		})
+	</script>
+	<script src="./js/properties.js"></script>
+	<!-- ------ -->
+</body>
+
+</html>

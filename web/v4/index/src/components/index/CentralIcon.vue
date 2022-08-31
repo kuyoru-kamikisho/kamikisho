@@ -95,7 +95,7 @@ export default {
 }
 
 .k-img-effects-passivity {
-  filter: none;
+  filter: brightness(120%);
   animation: 12s steps(3,end) 2s infinite none k-img-effects;
 }
 @keyframes k-img-effects {
