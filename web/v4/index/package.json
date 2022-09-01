@@ -10,6 +10,8 @@
     "animate.css": "3.5.1",
     "axios": "^0.27.2",
     "core-js": "^3.8.3",
+    "raw-loader": "^4.0.2",
+    "url-loader": "^4.1.1",
     "vue": "^2.6.14",
     "vue-axios": "^3.4.1",
     "vuetify": "^2.6.0",

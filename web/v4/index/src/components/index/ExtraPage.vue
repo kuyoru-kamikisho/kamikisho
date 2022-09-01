@@ -1,5 +1,12 @@
 <template>
-  <v-container class="k-absolute k-x-transform-center k-container-ex">
+  <v-container
+      v-touch="{
+    right:rt,
+    left:lt,
+      }"
+      @dblclick="db"
+      class="k-absolute k-x-transform-center k-container-ex"
+  >
     <SearchBar></SearchBar>
     <Section2></Section2>
   </v-container>
@@ -14,6 +21,21 @@ export default {
   components:{
     SearchBar,
     Section2,
+  },
+  methods: {
+    rt() {
+      if (this.$store.state.s2p === true)
+        this.$store.commit('s2p')
+    },
+    lt() {
+      if (this.$store.state.s2p === false)
+        this.$store.commit('s2p')
+    },
+    db() {
+      if (this.$store.state.homepageExtra) {
+        this.$store.commit('s2p')
+      }
+    }
   }
 }
 </script>

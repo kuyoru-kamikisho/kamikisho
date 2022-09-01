@@ -1,5 +1,5 @@
 <template>
-    <v-card width="100%" tile color="transparent" class="mx-auto mb-8" elevation="0">
+    <v-card width="100%" tile color="transparent" class="mx-auto mb-sm-2 mb-md-4 mb-lg-8 mb-xl-12" elevation="0">
       <v-form>
         <template v-for="(item,index) in searchers">
           <v-row v-show="item.showif" align-content="center" justify="center" no-gutters dense>

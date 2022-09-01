@@ -19,6 +19,7 @@
               dark
               class="font-weight-bold k-btn-text"
               @click="order"
+              elevation="6"
           >
             <v-icon class="mr-2">mdi-cart-arrow-down</v-icon>
             快速排单

@@ -85,6 +85,9 @@ export default {
       })
     },
     homepageExCommit() {
+      if (this.$store.state.s2p===true){
+        this.$store.commit('s2p')
+      }
       this.$store.commit('navCloseItem')
       this.$store.commit('homepageEx')
       if (this.$store.state.homepageExtra === true) {

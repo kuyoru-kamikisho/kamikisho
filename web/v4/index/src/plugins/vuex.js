@@ -12,9 +12,20 @@ const store = new Vuex.Store({
         tem: 0,
 
         homepageExtra: false,
+
+        s2p:false
     },
 
     mutations: {
+
+        /**
+         * 快捷导航按键组显示切换，对应有强制置0
+         * @param state
+         */
+        s2p(state){
+          state.s2p=!state.s2p
+        },
+
         nav(state, payload) {
             state.homepageExtra = false
             state.tem = payload.navchoose

@@ -16,5 +16,17 @@ module.exports = defineConfig({
             chunks: ['chunk-vendors', 'chunk-common', 'index']
         },
         subpage: 'src/subpage/subpage.js'
+    },
+
+    configureWebpack: {
+        module: {
+            rules: [
+                {
+                    test: /\.(txt)$/i,
+                    use: 'raw-loader'
+                },
+            ],
+        }
     }
+
 })

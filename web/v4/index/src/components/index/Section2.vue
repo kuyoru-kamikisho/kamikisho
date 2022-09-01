@@ -1,13 +1,20 @@
 <template>
-  <section id="section2">
-    <v-sheet color="transparent" class="k-site-box-class" v-for="(topic,index) in site" :key="index">
-      <a class="k-a-title k-cursor-default" :id="'#'+topic.title">
+  <section
+      id="section2"
+  >
+
+    <v-sheet color="transparent" class="k-site-box-class k-relative" v-for="(topic,index) in site" :key="index">
+
+      <a :id="topic.title" class="k-absolute k-element-penetrate"
+         style="height: 10px;width: 10px;background-color: red;bottom: 250px;visibility: hidden"> </a>
+
+      <a class="k-a-title k-cursor-default">
         <div class="k-title-icon"></div>
         <span v-text="topic.title"></span>
       </a>
 
       <v-sheet color="rgb(22 24 32 / 53%)" class="k-items">
-        <a class="k-display-inline-block k-relative k-a-hover" v-for="sl in topic.List" :href="sl.link" :key="index">
+        <a class="k-display-inline-block k-relative k-a-hover" v-for="(sl,i) in topic.List" :href="sl.link" :key="i">
           <div class="k-div k-display-inline-block k-relative my-2">
             <p class="k-absolute k-left-0 k-top-0 k-p k-p-common"></p>
             <span class="k-link-text k-link-text-common">{{ sl.name }}</span>
@@ -17,15 +24,17 @@
         </a>
       </v-sheet>
     </v-sheet>
+
   </section>
 </template>
 
-<script>
-/**
+<script>/**
  * 本组件用于构成快捷方式页面，本页初始化时不对外显示，显示条件为点击左上角站标
  */
+
 export default {
   name: "Section2",
+
   data: () => ({
     site:
         [
@@ -113,7 +122,8 @@ export default {
             ],
           },
         ],
-  })
+  }),
+
 }
 </script>
 
@@ -196,6 +206,13 @@ a {
 
 .k-items {
   margin-left: 16px;
+}
+
+@media screen and (max-width: 960px) {
+  .k-items {
+    margin-left: 0px;
+    margin-right: 16px;
+  }
 }
 
 .k-div {

@@ -1,10 +1,15 @@
 <template>
   <div id="home">
-    <video class="k-video k-fixed k-x-transform-center" autoplay loop muted>
-      <source :src="mad">
-    </video>
-    <div class="k-fixed k-black-cover"></div>
-    <img class="k-fixed k-left-0 k-top-0 k-opacity-70 k-img-cov" :src="cover">
+    <div id="v" v-if="load">
+      <video class="k-video k-fixed k-x-transform-center" autoplay loop muted>
+        <source :src="mad">
+      </video>
+      <div class="k-fixed k-black-cover"></div>
+      <img class="k-fixed k-left-0 k-top-0 k-opacity-70 k-img-cov" :src="cover">
+    </div>
+    <div id="p" v-if="!load">
+      <v-sheet color="#252426" width="100%" height="100%" class="k-fixed"></v-sheet>
+    </div>
   </div>
 </template>
 
@@ -16,8 +21,21 @@ export default {
   name: "VideoCanvas",
   data: () => ({
     mad,
-    cover
-  })
+    cover,
+    load:false
+  }),
+  methods:{
+    _isMobile(){
+      let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
+      return flag;
+    }
+  },
+  beforeMount() {
+    if(this._isMobile())
+      this.$data.load=false
+    else
+      this.$data.load=true
+  }
 }
 </script>
 
