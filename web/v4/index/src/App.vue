@@ -17,6 +17,10 @@
         <HomePage v-show="this.$store.state.navbar[0]"></HomePage>
       </transition>
 
+      <transition enter-active-class="k-animated k-fadeInDown" leave-active-class="k-animated k-fadeOutUp">
+        <Constrain v-show="this.$store.state.navbar[1]"></Constrain>
+      </transition>
+
       <transition enter-active-class="k-animated k-fadeInRight" leave-active-class="k-animated k-fadeOutRight">
         <LoginPage v-show="this.$store.state.navbar[4]"></LoginPage>
       </transition>
@@ -26,6 +30,8 @@
       </transition>
 
     </v-main>
+
+    <Tamago v-if="this.$store.state.tamago"></Tamago>
 
   </v-app>
 </template>
@@ -41,6 +47,8 @@ import HomePage from "@/components/index/HomePage";
 import ExtraPage from "@/components/index/ExtraPage";
 import Background from "@/components/index/Background";
 import S2Plugin from "@/components/index/S2-Plugin";
+import Constrain from "@/components/index/ConstraintsInfo"
+import Tamago from "@/components/index/Tamago";
 
 const app_main = {
   name: 'App',
@@ -51,7 +59,9 @@ const app_main = {
     HomePage,
     ExtraPage,
     Background,
-    S2Plugin
+    S2Plugin,
+    Constrain,
+    Tamago
   },
 
   data: () => ({

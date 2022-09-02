@@ -117,8 +117,13 @@ export default {
     },
     enterKeyUp(index) {
       if (this.$data.searchContent !== '') {
-        let searchURL = this.$data.searchers[index].redirect + this.$data.searchContent;
-        window.location.assign(searchURL)
+        if (this.$data.searchContent !== 'tamago') {
+          let searchURL = this.$data.searchers[index].redirect + this.$data.searchContent;
+          window.location.assign(searchURL)
+        }else {
+          this.$store.commit('tamago')
+          this.$data.searchContent=''
+        }
       }
     }
   }

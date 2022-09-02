@@ -13,10 +13,15 @@ const store = new Vuex.Store({
 
         homepageExtra: false,
 
-        s2p:false
+        s2p:false,
+
+        tamago:false
     },
 
     mutations: {
+        tamago(state){
+          state.tamago=!state.tamago
+        },
 
         /**
          * 快捷导航按键组显示切换，对应有强制置0

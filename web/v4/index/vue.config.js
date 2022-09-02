@@ -25,6 +25,10 @@ module.exports = defineConfig({
                     test: /\.(txt)$/i,
                     use: 'raw-loader'
                 },
+                {
+                    test: /\.(pdf|docx|ppt)$/i,
+                    use: 'file-loader'
+                },
             ],
         }
     }
