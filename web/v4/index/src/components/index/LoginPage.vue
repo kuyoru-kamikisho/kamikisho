@@ -437,20 +437,28 @@ export default {
     register() {
       if (this.$refs.formRegister.validate()) {
         axios({
-          url: "/demo1",
+          url: "/register",
           method: "post",
-          baseURL: "http://localhost/ajax_refrence_war/",
+          baseURL: "http://localhost/v4/",
           data: this.$data.registerData
+        }).then((res)=>{
+
+        }).catch((err)=>{
+          console.log('网络错误')
         })
       }
     },
     query() {
       if (this.$refs.formQuery.validate()) {
         axios({
-          url: "/demo1",
+          url: "/login",
           method: "post",
-          baseURL: "http://localhost/ajax_refrence_war/",
+          baseURL: "http://localhost/v4/",
           data: this.$data.queryData
+        }).then((res)=>{
+
+        }).catch((err)=>{
+          console.log('网络错误')
         })
       }
     },

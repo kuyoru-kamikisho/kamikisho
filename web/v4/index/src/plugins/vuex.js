@@ -13,22 +13,27 @@ const store = new Vuex.Store({
 
         homepageExtra: false,
 
-        s2p:false,
+        s2p: false,
 
-        tamago:false
+        tamago: false
     },
 
     mutations: {
-        tamago(state){
-          state.tamago=!state.tamago
+        tamago(state) {
+            state.tamago = !state.tamago
+            if (state.tamago) {
+                state.homepageExtra = false
+                state.navbar = [false, false, false, false, false]
+                state.s2p = false
+            }
         },
 
         /**
          * 快捷导航按键组显示切换，对应有强制置0
          * @param state
          */
-        s2p(state){
-          state.s2p=!state.s2p
+        s2p(state) {
+            state.s2p = !state.s2p
         },
 
         nav(state, payload) {

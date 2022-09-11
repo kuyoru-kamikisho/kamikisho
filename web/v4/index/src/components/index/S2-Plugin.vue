@@ -17,7 +17,7 @@ export default {
   name: "S2-Plugin",
   data: () => ({
     toh: ['动漫/漫画', '图片', '工具', '社区', '编程']
-  })
+  }),
 }
 </script>
 
@@ -88,6 +88,7 @@ p.k-dec-p3.k-dec-p2.k-absolute {
 .k-section {
   bottom: 2%;
   right: 2%;
+  user-select: none;
 }
 
 .k-a {

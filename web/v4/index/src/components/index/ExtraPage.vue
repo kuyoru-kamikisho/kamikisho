@@ -4,7 +4,6 @@
     right:rt,
     left:lt,
       }"
-      @dblclick="db"
       class="k-absolute k-x-transform-center k-container-ex"
   >
     <SearchBar></SearchBar>
@@ -31,11 +30,6 @@ export default {
       if (this.$store.state.s2p === false)
         this.$store.commit('s2p')
     },
-    db() {
-      if (this.$store.state.homepageExtra) {
-        this.$store.commit('s2p')
-      }
-    }
   }
 }
 </script>

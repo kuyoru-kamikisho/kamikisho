@@ -1,6 +1,7 @@
 <template>
   <section
       id="section2"
+      @dblclick.stop="db"
   >
 
     <v-sheet color="transparent" class="k-site-box-class k-relative" v-for="(topic,index) in site" :key="index">
@@ -13,7 +14,7 @@
         <span v-text="topic.title"></span>
       </a>
 
-      <v-sheet color="rgb(22 24 32 / 53%)" class="k-items">
+      <v-sheet color="rgb(27 23 32 / 87%)" class="k-items">
         <a class="k-display-inline-block k-relative k-a-hover" v-for="(sl,i) in topic.List" :href="sl.link" :key="i">
           <div class="k-div k-display-inline-block k-relative my-2">
             <p class="k-absolute k-left-0 k-top-0 k-p k-p-common"></p>
@@ -123,13 +124,21 @@ export default {
           },
         ],
   }),
-
+methods:{
+  db(e) {
+    console.log(e.target)
+    if (this.$store.state.homepageExtra) {
+      this.$store.commit('s2p')
+    }
+  }
+}
 }
 </script>
 
 <style scoped lang="less">
 section#section2 {
   padding: 8px 0 72px 0;
+  user-select: none;
 }
 
 .k-site-box-class {

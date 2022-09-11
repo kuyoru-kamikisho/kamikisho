@@ -18,11 +18,10 @@
               block color="indigo darken-1"
               dark
               class="font-weight-bold k-btn-text"
-              @click="order"
-              elevation="6"
+              @click="rule"
           >
             <v-icon class="mr-2">mdi-cart-arrow-down</v-icon>
-            快速排单
+            查看规则
           </v-btn>
         </v-col>
         <v-col>
@@ -57,12 +56,11 @@
 export default {
   name: "Section1",
   methods: {
-    order() {
+    rule() {
       this.$store.commit({
         type:'nav',
-        navchoose:4
+        navchoose:1
       })
-      this.$store.commit('showRegister')
     },
     query(){
       this.$store.commit({

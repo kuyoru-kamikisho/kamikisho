@@ -14,11 +14,11 @@
       </p>
       <hr>
       <ul class="content">
-        <li class="t1"><a href="#%E8%A7%84%E5%88%99%E4%B8%8E%E6%B5%81%E7%A8%8B">规则与流程</a>
+        <li class="t1"><a class="k-at" href="#%E8%A7%84%E5%88%99%E4%B8%8E%E6%B5%81%E7%A8%8B">规则与流程</a>
           <ul>
-            <li><a href="#%E5%85%B7%E4%BD%93%E8%A7%84%E5%88%99%E7%BA%A6%E6%9D%9F">具体规则/约束</a></li>
-            <li><a href="#%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B">具体流程</a></li>
-            <li><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</a></li>
+            <li><a class="k-at" href="#%E5%85%B7%E4%BD%93%E8%A7%84%E5%88%99%E7%BA%A6%E6%9D%9F">具体规则/约束</a></li>
+            <li><a class="k-at" href="#%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B">具体流程</a></li>
+            <li><a class="k-at" href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">注意事项</a></li>
           </ul>
         </li>
       </ul>
@@ -130,7 +130,7 @@
       <br>
       <br>
       <p class="p-center">
-        <i>本规则由 玖夜kuyoru书写，仅适用于其个人，其他画师请另行咨询。</i>
+        <i>本规则由 玖夜kuyoru 书写，仅适用于其个人，其他画师请另行咨询。</i>
       </p>
       <p class="p-center">
         <span>2022 年 9 月 2 日</span>
@@ -153,6 +153,12 @@ export default {
 </script>
 
 <style scoped lang="less">
+.k-at{
+  &:hover{
+    text-decoration: underline;
+    color: #0d1aaf;
+  }
+}
 .t1 {
   margin: 0 0 24px 0;
 }

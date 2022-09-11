@@ -24,7 +24,7 @@
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="white--text pt-0" v-html="info"></v-card-text>
+      <v-card-text class="gray--text text--darken-2 pt-0" v-html="info"></v-card-text>
 
       <v-divider></v-divider>
 
