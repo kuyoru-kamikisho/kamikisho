@@ -437,10 +437,10 @@ export default {
     register() {
       if (this.$refs.formRegister.validate()) {
         axios({
-          url: "/register",
+          url: "/Register",
           method: "post",
           baseURL: "http://localhost/v4/",
-          data: this.$data.registerData
+          params: this.$data.registerData
         }).then((res)=>{
 
         }).catch((err)=>{
@@ -451,10 +451,10 @@ export default {
     query() {
       if (this.$refs.formQuery.validate()) {
         axios({
-          url: "/login",
+          url: "/Login",
           method: "post",
           baseURL: "http://localhost/v4/",
-          data: this.$data.queryData
+          params: this.$data.queryData
         }).then((res)=>{
 
         }).catch((err)=>{

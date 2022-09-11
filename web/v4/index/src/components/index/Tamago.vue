@@ -42,10 +42,10 @@ export default {
     },
     key(req) {
       axios({
-        url: "/tamago",
+        url: "/Tamago",
         method: "post",
         baseURL: "http://localhost/v4/",
-        data: {
+        params: {
           type: req
         }
       }).then((rsp) => {

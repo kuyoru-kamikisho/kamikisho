@@ -5,7 +5,7 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>org.example</groupId>
-  <artifactId>ajax-refrence</artifactId>
+  <artifactId>v4</artifactId>
   <version>1.0-SNAPSHOT</version>
   <packaging>war</packaging>
 
@@ -128,5 +128,18 @@
         </plugin>
       </plugins>
     </pluginManagement>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.tomcat.maven</groupId>
+        <artifactId>tomcat7-maven-plugin</artifactId>
+        <version>2.2</version>
+        <configuration>
+          <port>80</port>
+          <path>/v4</path>
+          <uriEncoding>UTF-8</uriEncoding>
+          <contextReloadable>true</contextReloadable>
+        </configuration>
+      </plugin>
+    </plugins>
   </build>
 </project>
