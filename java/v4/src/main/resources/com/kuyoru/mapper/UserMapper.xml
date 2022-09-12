@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kuyoru.mapper.UserMapper">
+    
+    <resultMap id="userResultMap" type="user">
+        <result column="adm" property="admin"/>
+        <result column="pwd" property="password"/>
+        <result column="nin" property="nickName"/>
+        <result column="sta" property="status"/>
+        <result column="wec" property="wx"/>
+        <result column="pho" property="mp"/>
+    </resultMap>
+
+    <select id="selectByAdmin" resultType="com.kuyoru.pojo.User" parameterType="boolean" resultMap="userResultMap">
+        select * from user where adm = #{b};
+    </select>
+
+</mapper>

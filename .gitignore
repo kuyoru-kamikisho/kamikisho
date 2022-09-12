@@ -8,3 +8,4 @@ out/
 **/webapp/*
 !**/webapp/WEB-INF/
 !**/webapp/WEB-INF/*
+tamago-key.txt
