@@ -281,6 +281,29 @@
 
 ![img_87.png](img_87.png)
 
+### Junit
+
+![img_88.png](img_88.png)
+
+![img_89.png](img_89.png)
+
+![img_90.png](img_90.png)
+
+    在上述方式存在小坑，与测试类的路径有关
+    当测试类的路径和被测试的启动类的路径不匹配时，会报错
+
+![img_91.png](img_91.png)
+
+    在springboot当中如果测试类与被测试启动类所处路径不匹配，就拿不到spring这个容器，也就无法进行测试
+
+![img_92.png](img_92.png)
+
+![img_93.png](img_93.png)
+
+![img_94.png](img_94.png)
+
+
+
 
 
 
