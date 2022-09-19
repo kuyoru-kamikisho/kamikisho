@@ -302,8 +302,278 @@
 
 ![img_94.png](img_94.png)
 
+### 整合Mybatis
 
+    需要哪些信息？
 
+![img_95.png](img_95.png)
 
+    spring boot 新建模块的情况下
 
+![img_96.png](img_96.png)
+
+    spring boot start自带依赖的格式
+    与整合第三方依赖的坐标id格式的不同：
+
+![img_97.png](img_97.png)
+
+    整合步骤1：导入starter依赖
+
+![img_98.png](img_98.png)
+
+    整合步骤2：写配置
+
+![img_99.png](img_99.png)
+
+    整合步骤3：写数据层(Mapper映射接口类)、用于装数据的实体类
+    注意：数据层的类不要忘记添加@Mapper注解哦
+
+![img_100.png](img_100.png)
+
+    整合步骤4：测试
+    你会发现我们不需要去创建mapper.xml文件
+    也不需要去创建mybatis.xml配置文件
+
+    总结：
+
+![img_101.png](img_101.png)
+
+    整合啥第三方框架，就导入啥坐标
+
+![img_102.png](img_102.png)
+
+![img_103.png](img_103.png)
+
+![img_104.png](img_104.png)
+
+![img_105.png](img_105.png)
+
+![img_106.png](img_106.png)
+
+### 整合Mybatis常见问题
+
+![img_107.png](img_107.png)
+
+    方案其1：
+
+![img_108.png](img_108.png)
+
+![img_109.png](img_109.png)
+
+### 整合Mybatis-plus
+
+    国人开发，spring官方未收录，因此没有可以勾选的项
+
+![img_110.png](img_110.png)
+
+![img_111.png](img_111.png)
+
+    但是我们可以去使用阿里巴巴，此时mybatis、mybatis plus都要勾选
+
+![img_112.png](img_112.png)
+
+    另外一种方法，直接去Maven仓库查（推荐）：
+
+![img_113.png](img_113.png)
+
+![img_114.png](img_114.png)
+
+![img_115.png](img_115.png)
+
+![img_116.png](img_116.png)
+
+![img_118.png](img_118.png)
+
+![img_117.png](img_117.png)
+
+### Druid
+
+![img_119.png](img_119.png)
+
+![img_120.png](img_120.png)
+
+![img_121.png](img_121.png)
+
+![img_122.png](img_122.png)
+
+## 模块创建
+
+    SSMP开始学习
+
+![img_123.png](img_123.png)
+
+    今后创建模块只需要勾选Sql 和 Web，我们使用MP来，所以不勾选mybatis
+
+![img_124.png](img_124.png)
+
+## 实体类快速开发（LomBok）
+
+![img_125.png](img_125.png)
+
+![img_126.png](img_126.png)
+
+![img_127.png](img_127.png)
+
+## 数据层快速开发
+
+![img_128.png](img_128.png)
+
+![img_129.png](img_129.png)
+
+![img_130.png](img_130.png)
+
+![img_131.png](img_131.png)
+
+![img_132.png](img_132.png)
+
+    需要插入数据时：
+
+![img_133.png](img_133.png)
+
+![img_134.png](img_134.png)
+
+![img_135.png](img_135.png)
+
+    base mapper千万别忘了指定泛型
+
+![img_136.png](img_136.png)
+
+![img_137.png](img_137.png)
+
+![img_138.png](img_138.png)
+
+## MP日志（选学）
+
+![img_139.png](img_139.png)
+
+![img_140.png](img_140.png)
+
+## 分页
+
+![img_141.png](img_141.png)
+
+    需要添加MP阻拦器才能生效
+    另建一个config包，包下写这个配置
+    作用，动态生成sql
+
+![img_142.png](img_142.png)
+
+    原理解释：
+
+![img_143.png](img_143.png)
+
+    总结
+
+![img_144.png](img_144.png)
+
+![img_145.png](img_145.png)
+
+![img_146.png](img_146.png)
+
+## 条件查询（数据层标准开发）
+
+![img_147.png](img_147.png)
+
+![img_148.png](img_148.png)
+
+![img_149.png](img_149.png)
+
+## 业务层标准开发（CRUD）
+
+    如登录是业务层，select是数据层
+
+![img_150.png](img_150.png)
+
+![img_151.png](img_151.png)
+
+![img_152.png](img_152.png)
+
+![img_153.png](img_153.png)
+
+    总结：
+
+![img_154.png](img_154.png)
+
+![img_155.png](img_155.png)
+
+![img_156.png](img_156.png)
+
+![img_157.png](img_157.png)
+
+## 业务层快速开发-MP
+
+![img_158.png](img_158.png)
+
+![img_160.png](img_160.png)
+
+    第一个泛型是你用的实现类,第二个是对应的模型类
+
+![img_159.png](img_159.png)
+
+    总结
+
+![img_161.png](img_161.png)
+
+![img_162.png](img_162.png)
+
+![img_163.png](img_163.png)
+
+![img_164.png](img_164.png)
+
+![img_165.png](img_165.png)
+
+## 表现层标准开发
+
+![img_166.png](img_166.png)
+
+![img_167.png](img_167.png)
+
+![img_168.png](img_168.png)
+
+![img_169.png](img_169.png)
+
+![img_170.png](img_170.png)
+
+![img_171.png](img_171.png)
+
+## 表现层消息类型一致性处理
+
+    痛点:
+
+![img_172.png](img_172.png)
+
+    统一:
+
+![img_173.png](img_173.png)
+
+![img_174.png](img_174.png)
+
+![img_175.png](img_175.png)
+
+    类:
+
+![img_176.png](img_176.png)
+
+![img_177.png](img_177.png)
+
+    使用示例:
+
+![img_178.png](img_178.png)
+
+![img_180.png](img_180.png)
+
+![img_179.png](img_179.png)
+
+![img_181.png](img_181.png)
+
+## 前后端协议联调
+
+    clean:maven clean
+    静态资源，即前端文件放在resource/static目录下
+
+![img_182.png](img_182.png)
+
+![img_183.png](img_183.png)
+
+![img_184.png](img_184.png)
 
