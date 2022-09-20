@@ -6,7 +6,8 @@
       <img class="k-fixed k-left-0 k-top-0 k-opacity-70 k-img-cov" :src="cover">
     </div>
     <div id="p" v-if="!load">
-      <v-sheet color="#252426" width="100%" height="100%" class="k-fixed"></v-sheet>
+      <!-- color="#252426" 如果需要追加视频为背景则添加该属性 -->
+      <v-sheet width="100%" height="100%" class="k-fixed"></v-sheet>
     </div>
   </div>
 </template>
@@ -20,40 +21,40 @@ export default {
   data: () => ({
     mad,
     cover,
-    load:false
+    load: false
   }),
-  methods:{
-    _isMobile(){
+  methods: {
+    _isMobile() {
       let flag = navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i);
       return flag;
     },
   },
   beforeMount() {
-    if(this._isMobile())
-      this.$data.load=false
+    if (this._isMobile())
+      this.$data.load = false
     else
-      this.$data.load=false
+      this.$data.load = false
   },
   mounted() {
     let vle;
     let cav;
     let ctx;
     vle = document.createElement('video');
-    vle.src=this.$data.mad
-    vle.loop=true
-    vle.autoplay=true
-    vle.muted=true
+    vle.src = this.$data.mad
+    vle.loop = true
+    vle.autoplay = true
+    vle.muted = true
     vle.play()
 
-    cav=this.$refs.cav
+    cav = this.$refs.cav
     ctx = cav.getContext('2d');
-    cav.width=window.innerWidth
-    cav.height=window.innerHeight
+    cav.width = window.innerWidth
+    cav.height = window.innerHeight
 
-    vle.addEventListener('play',loop,false)
+    vle.addEventListener('play', loop, false)
 
-    function loop(){
-      ctx.drawImage(vle,0,0,cav.width,cav.width*3/8);
+    function loop() {
+      ctx.drawImage(vle, 0, 0, cav.width, cav.width * 3 / 8);
       requestAnimationFrame(loop)
     }
   }
@@ -61,7 +62,7 @@ export default {
 </script>
 
 <style scoped lang="less">
-.k-img-cov{
+.k-img-cov {
   width: auto;
   height: 100%;
   min-width: 100%;
@@ -71,7 +72,8 @@ export default {
   transition: opacity .3s ease;
   filter: brightness(30%);
 }
-.k-black-cover{
+
+.k-black-cover {
   background-color: rgba(0, 0, 0, 0.85);
   width: 100%;
   height: 100vh;

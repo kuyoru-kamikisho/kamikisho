@@ -177,6 +177,7 @@ h2 {
   box-sizing: border-box;
   background: aliceblue;
   font-family: '汉仪文黑-85W', "Microsoft YaHei", sans-serif, YakuHanJP, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "游ゴシック", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.18);
 }
 
 @media screen and (min-width: 960px) and (max-width: 1264px) {

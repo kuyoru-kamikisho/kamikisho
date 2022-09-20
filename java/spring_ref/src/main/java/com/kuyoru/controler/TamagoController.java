@@ -16,14 +16,14 @@ import java.util.List;
 @RequestMapping("/Tamago")
 public class TamagoController {
     @PostMapping
-    public String net(@RequestParam String type){
-        switch (type){
+    public String net(@RequestParam String type) {
+        switch (type) {
             case "v1":
                 try {
                     File v1 = new File("E:\\Acode\\java\\spring_ref\\src\\main\\resources\\tamago\\tamago-key.v1.json");
                     List<String> lines = FileUtils.readLines(v1, "UTF-8");
                     LineIterator it = FileUtils.lineIterator(v1, "UTF-8");
-                    while( it.hasNext() ){
+                    while (it.hasNext()) {
                         String line = it.nextLine();
                         System.out.println(line);
                     }

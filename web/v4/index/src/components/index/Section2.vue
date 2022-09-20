@@ -14,7 +14,7 @@
         <span v-text="topic.title"></span>
       </a>
 
-      <v-sheet color="rgb(27 23 32 / 87%)" class="k-items">
+      <v-sheet color="rgb(27 23 32 / 80%)" class="k-items">
         <a class="k-display-inline-block k-relative k-a-hover" v-for="(sl,i) in topic.List" :href="sl.link" :key="i">
           <div class="k-div k-display-inline-block k-relative my-2">
             <p class="k-absolute k-left-0 k-top-0 k-p k-p-common"></p>

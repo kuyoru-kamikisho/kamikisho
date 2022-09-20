@@ -21,6 +21,14 @@
         <Constrain v-show="this.$store.state.navbar[1]"></Constrain>
       </transition>
 
+      <transition enter-active-class="animated fadeIn" leave-active-class="animated fadeOut">
+        <Price v-show="this.$store.state.navbar[2]"></Price>
+      </transition>
+
+      <transition enter-active-class="k-animated k-fadeInDown" leave-active-class="k-animated k-fadeOutUp">
+        <PreviousWorks v-show="this.$store.state.navbar[3]"></PreviousWorks>
+      </transition>
+
       <transition enter-active-class="k-animated k-fadeInRight" leave-active-class="k-animated k-fadeOutRight">
         <LoginPage v-show="this.$store.state.navbar[4]"></LoginPage>
       </transition>
@@ -49,6 +57,8 @@ import Background from "@/components/index/Background";
 import S2Plugin from "@/components/index/S2-Plugin";
 import Constrain from "@/components/index/ConstraintsInfo"
 import Tamago from "@/components/index/Tamago";
+import Price from "@/components/index/Price";
+import PreviousWorks from "@/components/index/PreviousWorks";
 
 const app_main = {
   name: 'App',
@@ -61,7 +71,9 @@ const app_main = {
     Background,
     S2Plugin,
     Constrain,
-    Tamago
+    Tamago,
+    Price,
+    PreviousWorks
   },
 
   data: () => ({
