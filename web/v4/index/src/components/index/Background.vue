@@ -32,7 +32,7 @@ export default {
     if(this._isMobile())
       this.$data.load=false
     else
-      this.$data.load=true
+      this.$data.load=false
   },
   mounted() {
     let vle;

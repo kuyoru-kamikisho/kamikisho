@@ -1,5 +1,6 @@
 package com.kuyoru.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.kuyoru.pojo.User;
 import org.apache.ibatis.annotations.*;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * 用户侧Mapper
  */
 @Mapper
-public interface UserMapper {
+public interface UserMapper extends BaseMapper<User> {
 
     /**
      * 查询用户信息，所有

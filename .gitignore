@@ -1,11 +1,16 @@
 node_modules/
 dist/
+**/dist/
 npm-debug.log
 .idea/
 *.gitignore
 target/
+**/target/
 out/
 **/webapp/*
 !**/webapp/WEB-INF/
 !**/webapp/WEB-INF/*
-tamago-key.txt
+**/tamago-key.*
+**/static/
+/static/
+**/.idea
