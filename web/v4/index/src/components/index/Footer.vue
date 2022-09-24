@@ -10,7 +10,7 @@
         flat
         tile
         color="transparent"
-        class="text-center"
+        class="text-center white--text"
     >
       <v-card-text>
         <v-btn
@@ -19,18 +19,18 @@
             class="mx-4"
             icon
         >
-          <v-icon color="blue-grey darken-4" size="24px">
+          <v-icon color="cyan lighten-5" size="24px">
             {{ icon }}
           </v-icon>
         </v-btn>
       </v-card-text>
 
-      <v-card-text class="grey--text text--darken-4 pt-0" v-html="info"></v-card-text>
+      <v-card-text class="pt-0 grey--text text--lighten-2" v-html="info"></v-card-text>
 
       <v-divider></v-divider>
 
       <!--如果追加视频为背景 class="white--text"-->
-      <v-card-text class="black--text">
+      <v-card-text class="black--text white--text">
         2022-9-1 &nbsp;©
         <i>kuyoru</i>
       </v-card-text>

@@ -9,7 +9,7 @@
         hide-on-scroll
         fixed
         fade-img-on-scroll
-        color="rgb(242 243 245 / 90%)"
+        color="rgb(242 243 245 / 92%)"
     >
 
       <v-app-bar-nav-icon @click="homepageExCommit">

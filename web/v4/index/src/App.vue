@@ -3,6 +3,8 @@
       id="app"
   >
 
+    <CursorCollimator></CursorCollimator>
+
     <Background></Background>
 
     <NavigationBar ref="Nav"></NavigationBar>
@@ -47,7 +49,7 @@
 <script>
 import "./assets/global/css-less/global.less"
 import "./assets/global/js-effects/sakura-float"
-import "./assets/global/js-effects/click-blast.js"
+// import "./assets/global/js-effects/click-blast.js"
 import NavigationBar from "@/components/index/NavigationBar";
 import LoginPage from "@/components/index/LoginPage";
 import SearchBar from "@/components/index/SearchBar";
@@ -59,6 +61,7 @@ import Constrain from "@/components/index/ConstraintsInfo"
 import Tamago from "@/components/index/Tamago";
 import Price from "@/components/index/Price";
 import PreviousWorks from "@/components/index/PreviousWorks";
+import CursorCollimator from "@/components/global/CursorCollimator";
 
 const app_main = {
   name: 'App',
@@ -73,7 +76,8 @@ const app_main = {
     Constrain,
     Tamago,
     Price,
-    PreviousWorks
+    PreviousWorks,
+    CursorCollimator
   },
 
   data: () => ({

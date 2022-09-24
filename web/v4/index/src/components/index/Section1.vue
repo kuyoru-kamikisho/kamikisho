@@ -2,12 +2,12 @@
   <section id="section1">
     <!--    white--text -->
     <p
-        class="k-p1 text-sm-h5 text-md-h5 text-lg-h4">
+        class="k-p1 text-sm-h5 text-md-h5 text-lg-h4 white--text">
       玖夜 Commission Platform
     </p>
     <!--  deep-purple--text text--lighten-5  -->
     <p
-        class="k-p2 text-sm-subtitle-1 text-md-subtitle-1 text-lg-h6 font-weight-light">
+        class="k-p2 text-sm-subtitle-1 text-md-subtitle-1 text-lg-h6 font-weight-light deep-purple--text text--lighten-5">
       玖夜委托平台是一个高度私人定制的专门用于为数字<br>绘画交易提供服务的线上交易平台。<br>
       不需要重复询问 —— 创建委托、催稿进度、不透明交稿，约稿所需要的一切信息都触手可及。
     </p>
@@ -32,7 +32,7 @@
                  block
                  class="font-weight-bold k-btn-text"
                  outlined
-                 color="indigo"
+                 color="#d2d5e1"
                  @click="query"
           >
             <v-icon class="mr-2">mdi-speedometer</v-icon>

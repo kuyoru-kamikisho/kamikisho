@@ -1,7 +1,7 @@
 <template>
   <v-container class="container-3d k-absolute k-x-transform-center">
 
-    <v-card class="mb-16 mx-auto roll-180-x" width="420" tile elevation="10">
+    <v-card class="mb-16 mx-auto roll-180-x black--text" color="#ffffffd1" width="420" tile elevation="10">
       <v-card
           tile
           height="720px"

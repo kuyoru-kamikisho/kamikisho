@@ -28,7 +28,7 @@ export default {
 .k-container {
   padding-top: 32px;
   padding-bottom: 96px;
-  background-color: white;
+  background-color: rgba(223, 237, 252, 0.71);
 }
 
 .k-price-info {
