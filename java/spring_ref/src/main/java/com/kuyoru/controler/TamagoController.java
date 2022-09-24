@@ -1,5 +1,6 @@
 package com.kuyoru.controler;
 
+import com.kuyoru.utils.KTool;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
@@ -21,17 +22,17 @@ public class TamagoController {
     public String net(@RequestParam String type) {
         switch (type) {
             case "v1":
-
-                return "v1";
+                log.info("v1 has been asked.");
+                return KTool.tamago("tamago-key.v1.json");
             case "v2":
-                System.out.println("v2");
-                return "v2";
+                log.info("v2 has been asked.");
+                return KTool.tamago("tamago-key.v2.json");
             case "h1":
-                System.out.println("h1");
-                return "h1";
+                log.info("h1 has been asked.");
+                return KTool.tamago("tamago-key.h1.json");
             case "h2":
-                System.out.println("h2");
-                return "h2";
+                log.info("h2 has been asked.");
+                return KTool.tamago("tamago-key.h2.json");
             default:
                 return "Something error";
         }

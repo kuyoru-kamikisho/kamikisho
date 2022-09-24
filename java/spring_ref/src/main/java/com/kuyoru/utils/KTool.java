@@ -1,6 +1,7 @@
 package com.kuyoru.utils;
 
 import com.kuyoru.controler.TamagoController;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
 
@@ -10,12 +11,14 @@ import java.util.List;
 
 /**
  * 工具类
+ * @author Kty
  */
+@Slf4j
 public class KTool {
 
     /**
      * 获取tamago.json并返回其内容
-     *
+     * @apiNote 本方法仅适用Tamago
      * @param fileName 直接写名称即可，需要加后缀，例：a.json
      * @return 返回文件中的内容
      */
@@ -31,9 +34,8 @@ public class KTool {
                 sb.append(line + "\n");
             }
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            log.info(e.getMessage());
         }
-
         return sb.toString();
     }
 }
