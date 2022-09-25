@@ -1,41 +1,42 @@
 <template>
-    <v-card width="100%" tile color="transparent" class="mx-auto mb-sm-2 mb-md-4 mb-lg-7 mb-xl-9 mt-3" elevation="0">
-      <v-form>
-        <template v-for="(item,index) in searchers">
-          <v-row v-show="item.showif" align-content="center" justify="center" no-gutters dense>
-            <v-col class="k-relative" :cols="colsResponse" align-self="center">
-              <v-text-field
-                  height="24"
-                  :placeholder="item.title"
-                  :type="item.type"
-                  v-model="searchContent"
-                  :value="searchContent"
-                  :prepend-inner-icon="item.prependicon"
-                  background-color="#f0f8ff96"
-                  rounded
-                  solo
-                  flat
-                  hide-details
-                  loader-height="0"
-                  class="inputer pa-0"
-                  @keyup.enter="enterKeyUp(index)"
-                  @keyup.esc="searchContent=''"
-              />
-              <v-btn class="k-absolute-important-effect" @click="switchListFnc(index)" text icon>
-                <v-sheet width="26" color="transparent">
-                  <v-img :src="item.icon"/>
-                </v-sheet>
-              </v-btn>
-              <v-btn class="k-absolute-important-clear" @click="searchContent=''" text icon>
-                <v-sheet width="24" color="transparent">
-                  <v-img :src="cross"/>
-                </v-sheet>
-              </v-btn>
-            </v-col>
-          </v-row>
-        </template>
-      </v-form>
-    </v-card>
+  <v-card width="100%" tile color="transparent" class="mx-auto mb-sm-2 mb-md-4 mb-lg-7 mb-xl-9 mt-3" elevation="0">
+    <v-form>
+      <template v-for="(item,index) in searchers">
+        <v-row v-show="item.showif" align-content="center" justify="center" no-gutters dense>
+          <v-col class="k-relative" :cols="colsResponse" align-self="center">
+            <v-text-field
+                height="24"
+                :placeholder="item.title"
+                :type="item.type"
+                v-model="searchContent"
+                :value="searchContent"
+                :prepend-inner-icon="item.prependicon"
+                background-color="#f0f8ff96"
+                rounded
+                solo
+                flat
+                hide-details
+                loader-height="0"
+                class="inputer pa-0"
+                @keyup.enter="enterKeyUp(index)"
+                @keyup.esc="searchContent=''"
+                @keyup.up.prevent="upKeyUp"
+            />
+            <v-btn class="k-absolute-important-effect" @click="switchListFnc(index)" text icon>
+              <v-sheet width="26" color="transparent">
+                <v-img :src="item.icon"/>
+              </v-sheet>
+            </v-btn>
+            <v-btn class="k-absolute-important-clear" @click="searchContent=''" text icon>
+              <v-sheet width="24" color="transparent">
+                <v-img :src="cross"/>
+              </v-sheet>
+            </v-btn>
+          </v-col>
+        </v-row>
+      </template>
+    </v-form>
+  </v-card>
 </template>
 
 <script>
@@ -105,8 +106,10 @@ export default {
         prependicon: "mdi-magnify",
         type: "search"
       },
-    ]
+    ],
+    upIndex: 0
   }),
+
   methods: {
     switchListFnc(index) {
       this.$data.searchers[index].showif = false
@@ -115,17 +118,57 @@ export default {
       else
         this.$data.searchers[index + 1].showif = true
     },
+    record() {
+      let where = 'k_history_' + localStorage.getItem('k_history_index')
+      let suffix = Number(localStorage.getItem('k_history_index'));
+      let content = this.$data.searchContent
+      localStorage.setItem(where, content)
+      if (localStorage.getItem('k_history_index') !== '4') {
+        suffix += 1
+        localStorage.setItem('k_history_index', suffix + "")
+      } else {
+        localStorage.setItem('k_history_index', '0')
+      }
+
+    },
     enterKeyUp(index) {
       if (this.$data.searchContent !== '') {
         if (this.$data.searchContent !== 'tamago') {
           let searchURL = this.$data.searchers[index].redirect + this.$data.searchContent;
+          this.record()
           window.location.assign(searchURL)
-        }else {
+        } else {
+          this, this.record()
           this.$store.commit('tamago')
-          this.$data.searchContent=''
+          this.$data.searchContent = ''
         }
       }
+    },
+    historyReg() {
+      if (localStorage.getItem('k_history_index') === null) {
+        localStorage.setItem('k_history_index', '0')
+        localStorage.setItem('k_history_0', '')
+        localStorage.setItem('k_history_1', '')
+        localStorage.setItem('k_history_2', '')
+        localStorage.setItem('k_history_3', '')
+        localStorage.setItem('k_history_4', '')
+      }
+    },
+    upKeyUp() {
+      let i = this.$data.upIndex
+      let w = 'k_history_' + i
+      let c = localStorage.getItem(w);
+      this.$data.searchContent = c
+      if (i === 4) {
+        this.$data.upIndex = 0
+      } else {
+        this.$data.upIndex += 1
+      }
     }
+  },
+
+  mounted() {
+    this.historyReg()
   }
 }
 </script>
@@ -142,10 +185,12 @@ export default {
   background-color: transparent;
   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.43);
 }
-input[type="search"]{
+
+input[type="search"] {
   font-family: "汉仪文黑-85W", sans-serif;
   letter-spacing: 1.6rem;
 }
+
 .k-btn {
   border: 1px solid rgba(168, 167, 167, 0.82);
   box-sizing: border-box;
