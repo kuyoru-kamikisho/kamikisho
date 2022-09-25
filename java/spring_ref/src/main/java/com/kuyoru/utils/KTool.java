@@ -1,9 +1,14 @@
 package com.kuyoru.utils;
 
 import com.kuyoru.controler.TamagoController;
+import com.kuyoru.mapper.TamagoMapper;
+import com.kuyoru.pojo.Tamago;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.LineIterator;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Service;
 
 import java.io.File;
 import java.io.IOException;
@@ -11,6 +16,7 @@ import java.util.List;
 
 /**
  * 工具类
+ *
  * @author Kty
  */
 @Slf4j
@@ -18,9 +24,10 @@ public class KTool {
 
     /**
      * 获取tamago.json并返回其内容
-     * @apiNote 本方法仅适用Tamago
+     *
      * @param fileName 直接写名称即可，需要加后缀，例：a.json
      * @return 返回文件中的内容
+     * @apiNote 本方法仅适用Tamago
      */
     public static String tamago(String fileName) {
         StringBuilder sb = null;
@@ -38,4 +45,5 @@ public class KTool {
         }
         return sb.toString();
     }
+
 }

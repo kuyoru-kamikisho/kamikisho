@@ -25,6 +25,8 @@ const store = new Vuex.Store({
                 state.homepageExtra = false
                 state.navbar = [false, false, false, false, false]
                 state.s2p = false
+            } else {
+                state.homepageExtra = true
             }
         },
 
