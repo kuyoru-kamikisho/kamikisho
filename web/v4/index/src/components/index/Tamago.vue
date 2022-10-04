@@ -1,8 +1,17 @@
 <template>
-  <section @dblclick="tamago" id="tamago" class="k-absolute k-top-0 k-left-0 k-tamago k-z-index-32">
+  <section id="tamago"
+           class="k-absolute k-top-0 k-left-0 k-tamago k-z-index-32">
+
     <v-container>
       <v-card>
-        <v-card-title class="k-title">
+
+        <v-btn text tile class="k-absolute-force k-right-0 k-top-0"
+               @click="tamago">
+          <span class="green--text">离开此地</span>
+          <v-icon color="green">mdi-exit-run</v-icon>
+        </v-btn>
+
+        <v-card-title>
           你在无意间进入了一片完全陌生的世界！
         </v-card-title>
         <v-card-subtitle>
@@ -23,22 +32,23 @@
           </v-tooltip>
         </v-sheet>
 
-        <v-card>
-          <v-card-subtitle>手中的钥匙忽然飞到空中，围绕你转了几圈之后猛地碎裂成细小的碎片，这些碎片又旋即拼接成了一串文字：</v-card-subtitle>
-          <v-card-text class="k-resp purple--text text--darken-4 k-relative">
-            <pre>{{ resp }}</pre>
+        <transition leave-active-class="animated fadeOut" enter-active-class="animated fadeIn">
+          <v-card v-show="isKeyClick">
+            <v-card-subtitle>手中的钥匙忽然飞到空中，围绕你转了几圈之后猛地碎裂成细小的碎片，这些碎片又旋即拼接成了一串文字：</v-card-subtitle>
+            <v-card-text class="k-resp purple--text text--darken-4 k-relative">
+              <pre>{{ resp }}</pre>
+              <v-tooltip left>
+                <template v-slot:activator="{ on, attrs }">
+                  <v-btn icon @click="clipwrite" class="k-absolute-force k-btn-clip k-top-0" v-bind="attrs" v-on="on">
+                    <v-icon :color="clipbtncolor" :class="clipbtnclass" v-text="clipicon"></v-icon>
+                  </v-btn>
+                </template>
+                <span>复制这些文字</span>
+              </v-tooltip>
 
-            <v-tooltip left>
-              <template v-slot:activator="{ on, attrs }">
-                <v-btn icon @click="clipwrite" class="k-absolute-force k-btn-clip k-top-0" v-bind="attrs" v-on="on">
-                  <v-icon :color="clipbtncolor" :class="clipbtnclass" v-text="clipicon"></v-icon>
-                </v-btn>
-              </template>
-              <span>复制这些文字</span>
-            </v-tooltip>
-
-          </v-card-text>
-        </v-card>
+            </v-card-text>
+          </v-card>
+        </transition>
       </v-card>
 
       <v-snackbar timeout="3000" v-model="snackbar" :value="snackbar">拷贝完毕</v-snackbar>
@@ -87,7 +97,8 @@ let Vtamago = {
     clipsuccess: 'mdi-check-all',
     clipbtnclass: 'k-clipboard',
     clipbtncolor: '',
-    snackbar: false
+    snackbar: false,
+    isKeyClick: false
   }),
 
   methods: {
@@ -132,6 +143,7 @@ let Vtamago = {
     },
     key(req) {
       this.$data.overlay = true
+      this.$data.isKeyClick = true
       this.$data.open = req
     },
     auth() {
