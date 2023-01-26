@@ -50,6 +50,7 @@ export default {
               {name: "AGE动漫", link: "https://www.agemys.cc/", area: "g"},
               {name: "樱花动漫", link: "http://www.dmh8.com/", area: "g"},
               {name: "樱花动漫", link: "http://www.857dm.com/", area: "b"},
+              {name: "omoFun", link: "https://www.omofun.top/", area: "b"},
               {name: "MX动漫", link: "http://www.mxdmx.com/", area: "b"},
               {name: "动漫蛋", link: "https://www.dm0.cc/", area: "b"},
               {name: "奇奇动漫", link: "https://www.qiqidongman.com/", area: "g"},
