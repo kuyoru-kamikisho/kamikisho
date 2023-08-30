@@ -10,7 +10,8 @@
       <v-sheet width="100%" height="100%" class="k-fixed"></v-sheet>
     </div>
     <div id="i" class="k-fixed">
-      <v-img gradient="to bottom, rgba(100, 115, 201, 0.13), rgba(25, 32, 72, 0.7)" width="100vw" min-height="100vh" :src="huttsky" :lazy-src="huttsky64"></v-img>
+      <v-img gradient="to bottom, rgba(100, 115, 201, 0.13), rgba(25, 32, 72, 0.7)" width="100vw" min-height="100vh"
+             :src="huttsky" :lazy-src="huttsky64"></v-img>
       <p v-html="huttskyInfo" class="k-absolute k-img-info"></p>
     </div>
   </div>
@@ -18,7 +19,6 @@
 
 <script>
 import cover from '../../assets/index/homepage/bg_cover.png'
-import mad from '../../assets/index/video/madshot.mp4'
 import huttsky from '../../assets/index/background/huttsky.png'
 import huttskyInfo from '../../assets/index/background/info/huttsky.txt'
 import huttsky64 from '../../assets/index/background/huttsky-64.png'
@@ -26,7 +26,6 @@ import huttsky64 from '../../assets/index/background/huttsky-64.png'
 export default {
   name: "Background",
   data: () => ({
-    mad,
     cover,
     huttsky,
     huttsky64,
@@ -44,31 +43,6 @@ export default {
       this.$data.load = false
     else
       this.$data.load = false
-  },
-  mounted() {
-    /*  加载视频作为背景，暂时不需要这个展示功能
-        let vle;
-        let cav;
-        let ctx;
-        vle = document.createElement('video');
-        vle.src = this.$data.mad
-        vle.loop = true
-        vle.autoplay = true
-        vle.muted = true
-        vle.play()
-
-        cav = this.$refs.cav
-        ctx = cav.getContext('2d');
-        cav.width = window.innerWidth
-        cav.height = window.innerHeight
-
-        vle.addEventListener('play', loop, false)
-
-        function loop() {
-          ctx.drawImage(vle, 0, 0, cav.width, cav.width * 3 / 8);
-          requestAnimationFrame(loop)
-        }
-    */
   }
 }
 </script>
@@ -90,7 +64,8 @@ export default {
   width: 100%;
   height: 100vh;
 }
-.k-img-info{
+
+.k-img-info {
   left: 2rem;
   bottom: .6rem;
   color: rgba(255, 255, 255, 0.45);
