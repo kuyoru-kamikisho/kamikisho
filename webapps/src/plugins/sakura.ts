@@ -7,11 +7,11 @@ class Sakura {
     private r: any;
     private fn: any;
 
-    constructor(x, y, s, r, fn) {
+    constructor(x: any, y: any, s: any, r: any, fn: any) {
         this.x = x, this.y = y, this.s = s, this.r = r, this.fn = fn
     }
 
-    draw(cxt) {
+    draw(cxt: any) {
         cxt.save();
         cxt.translate(this.x, this.y),
             cxt.rotate(this.r),
@@ -47,7 +47,7 @@ class Sakura {
 class SakuraList {
     list = [] as any[]
 
-    push(sakura) {
+    push(sakura: any) {
         this.list.push(sakura)
     }
 
@@ -57,7 +57,7 @@ class SakuraList {
         }
     }
 
-    draw(cxt) {
+    draw(cxt: any) {
         for (let i = 0, len = this.list.length; i < len; i++) {
             this.list[i].draw(cxt)
         }
@@ -65,10 +65,10 @@ class SakuraList {
 }
 
 function startSakura() {
-    let sakuraList, i;
+    let sakuraList: any, i;
     //@ts-ignore
     let requestAnimationFrame = window.requestAnimationFrame || window.mozRequestAnimationFrame || window.webkitRequestAnimationFrame || window.msRequestAnimationFrame || window.oRequestAnimationFrame;
-    let canvas = document.createElement("canvas"), cxt;
+    let canvas = document.createElement("canvas"), cxt: any;
     staticx = !0,
         canvas.height = window.innerHeight,
         canvas.width = window.innerWidth,
@@ -101,8 +101,8 @@ function startSakura() {
     stop = requestAnimationFrame(x)
 }
 
-function getRandom(option) {
-    let ret, random;
+function getRandom(option: any) {
+    let ret, random: any;
     switch (option) {
         case"x":
             ret = Math.random() * window.innerWidth;
@@ -117,17 +117,17 @@ function getRandom(option) {
             ret = 6 * Math.random();
             break;
         case"fnx":
-            random = 2 * Math.random() - .5, ret = function (x, y) {
+            random = 2 * Math.random() - .5, ret = function (x: any, y: any) {
                 return x + .5 * random + .72
             };
             break;
         case"fny":
-            random = 1.5 + .7 * Math.random(), ret = function (x, y) {
+            random = 1.5 + .7 * Math.random(), ret = function (x: any, y: any) {
                 return y + random
             };
             break;
         case"fnr":
-            random = .03 * Math.random(), ret = function (r) {
+            random = .03 * Math.random(), ret = function (r: any) {
                 return r + random
             }
     }
@@ -139,7 +139,7 @@ export default function () {
     img.onload = function () {
         startSakura()
     }
-    let x
+    let x: number
     window.onresize = function () {
         let canvas = document.querySelector('#canvas_sakura') as HTMLCanvasElement;
         canvas.style.opacity = '0'
