@@ -1,25 +1,31 @@
 import './KSheet.scss'
-import {defineComponent, defineCustomElement, h} from "vue";
-import type {SlotsType} from 'vue'
+import {defineComponent} from "vue";
+import {
+    defineRenter,
+    makePropColor,
+    makePropHeight, makePropMaxHeight, makePropMaxWidth, makePropMinHeight,
+    makePropMinWidth, makePropRounded, makePropTag,
+    makePropWidth
+} from "@/util/renderTools";
 
-const vnode =defineComponent({
-    props: {tag: {type: String, default: 'div'}},
-    slots:{},
-    setup(props,{slots}){
-        console.log(this.$slots)
-        return ()=>[
-            h(props.tag)
-        ]
+export default defineComponent({
+    name: 'KSheet',
+    props: {
+        ...makePropTag(),
+        ...makePropWidth(),
+        ...makePropHeight(),
+        ...makePropMinWidth(),
+        ...makePropMinHeight(),
+        ...makePropMaxWidth(),
+        ...makePropMaxHeight(),
+        ...makePropRounded(),
+        ...makePropColor()
     },
-    // render(p:any) {
-    //     console.log(typeof p.slots)
-    //     return (
-    //         <this.$props.tag>
-    //             2
-    //         </this.$props.tag>
-    //     )
-    // },
-    mounted() {
-    }
+    setup(props, {slots}) {
+        defineRenter(() => (
+            <props.tag
+                v-slots={slots}/>
+        ))
+        return {}
+    },
 })
-export default vnode
