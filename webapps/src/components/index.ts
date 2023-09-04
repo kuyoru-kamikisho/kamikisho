@@ -1,3 +1,1 @@
-import KSheet from './KSheet/KSheet'
-
-export {KSheet}
+export * from './KSheet'

@@ -1,5 +1,5 @@
 <template>
-  <k-sheet tag="p"></k-sheet>
+  <k-sheet tag="p">p标签</k-sheet>
   <!--  渲染结果：<p></p>-->
   <k-sheet tag="div">100</k-sheet>
   <!--  渲染结果：<div>100</div>-->
@@ -9,7 +9,6 @@
 
 <script setup>
 import {KSheet} from "@/components";
-
 </script>
 
 <style lang="scss">

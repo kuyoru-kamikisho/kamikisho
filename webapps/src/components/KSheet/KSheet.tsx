@@ -8,7 +8,7 @@ import {
     makePropWidth
 } from "@/util/renderTools";
 
-export default defineComponent({
+export const KSheet = defineComponent({
     name: 'KSheet',
     props: {
         ...makePropTag(),
@@ -24,8 +24,11 @@ export default defineComponent({
     setup(props, {slots}) {
         defineRenter(() => (
             <props.tag
+                class={'k-sheet'}
                 v-slots={slots}/>
         ))
         return {}
     },
 })
+
+export type KSheet = InstanceType<typeof KSheet>
