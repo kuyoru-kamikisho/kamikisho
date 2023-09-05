@@ -1,0 +1,52 @@
+.scrollable-y {
+  overflow-y: scroll;
+}
+
+.scrollable-x {
+  overflow-x: scroll;
+}
+
+.overflow-hidden {
+  overflow: hidden;
+}
+
+.overflow-x-hidden {
+  overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
+.scrollable {
+  overflow: hidden;
+
+  &:hover {
+    overflow: auto;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-color);
+    border-radius: 10px;
+    transition: background-color .1s ease;
+
+    &:hover {
+      background-color: var(--scrollbar-hover-color);
+    }
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar {
+    width: .375rem;
+    height: .375rem;
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-button {
+    background-color: transparent;
+    display: none;
+  }
+}

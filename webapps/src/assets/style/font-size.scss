@@ -1,0 +1,5 @@
+@for $i from 0 through 15 {
+  .text-size-#{$i * 2 + 12} {
+    font-size: 12px + $i * 2;
+  }
+}

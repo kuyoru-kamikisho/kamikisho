@@ -1,0 +1,13 @@
+.k-app {
+  @font-face {
+    font-family: "HanYiWenHei";
+    src: local("汉仪文黑-85W"),
+    url("../../assets/fonts/汉仪文黑-85W.TTF");
+  }
+  width: 100vw;
+  height: 100vh;
+  font-family: "HanYiWenHei";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smoothing: antialiased;
+}

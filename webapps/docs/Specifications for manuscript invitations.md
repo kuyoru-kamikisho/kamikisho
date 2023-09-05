@@ -1,5 +1,5 @@
 <p align="center">
-<img src="./src/assets/kuyoru-navicon.png" width="320px"/>
+<img src="../src/assets/imgs/kuyoru-navicon.png" width="320px"/>
 </p>
 
 -   -   -

@@ -2,7 +2,7 @@ import './KSheet.scss'
 import {defineComponent} from "vue";
 import {
     defineRenter,
-    makePropColor,
+    makePropColor, makePropElevation,
     makePropHeight, makePropMaxHeight, makePropMaxWidth, makePropMinHeight,
     makePropMinWidth, makePropRounded, makePropTag,
     makePropWidth
@@ -19,7 +19,8 @@ export const KSheet = defineComponent({
         ...makePropMaxWidth(),
         ...makePropMaxHeight(),
         ...makePropRounded(),
-        ...makePropColor()
+        ...makePropColor(),
+        ...makePropElevation()
     },
     setup(props, {slots}) {
         defineRenter(() => (
