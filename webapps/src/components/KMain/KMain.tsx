@@ -1,14 +1,15 @@
 import './KMain.scss'
 import {defineComponent} from "vue";
 import {
-    defineRenter,
+    defineRenter, makePropColor,
     makePropTag,
 } from "@/util/renderTools";
 
 export const KMain = defineComponent({
     name: 'KMain',
     props: {
-        ...makePropTag(),
+        ...makePropTag('main'),
+        ...makePropColor(),
     },
     setup(props, {slots}) {
         defineRenter(() => (

@@ -1,0 +1,1 @@
+export {KFooter} from './KFooter'

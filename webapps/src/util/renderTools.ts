@@ -1,5 +1,4 @@
 import {getCurrentInstance} from "vue";
-import type {ComponentObjectPropsOptions} from "vue";
 
 export function defineRenter(fn: { (): any }) {
     let vm = getCurrentInstance();
@@ -21,8 +20,12 @@ export function makeProp<T extends string>(name: T, type?: any, defaultValue?: a
     return p
 }
 
-export function makePropTag() {
-    return makeProp('tag', String, 'div')
+export function makePropTag<TagName extends keyof HTMLElementTagNameMap>(tag?: TagName) {
+    return makeProp('tag', String, tag ?? 'div')
+}
+
+export function makePropPosition() {
+    return makeProp('position', String)
 }
 
 export function makePropWidth() {

@@ -4,6 +4,7 @@ import {
     defineRenter,
     makePropTag,
 } from "@/util/renderTools";
+import {useComputedVariables} from "@/stores/useglobal";
 
 export const KApp = defineComponent({
     name: 'KApp',
@@ -11,8 +12,11 @@ export const KApp = defineComponent({
         ...makePropTag(),
     },
     setup(props, {slots}) {
+        const stylesVariables = useComputedVariables();
+
         defineRenter(() => (
             <props.tag
+                style={stylesVariables.value}
                 class={'k-app'}
                 v-slots={slots}/>
         ))
