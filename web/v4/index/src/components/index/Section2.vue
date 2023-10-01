@@ -49,7 +49,8 @@ export default {
               {name: "AGE动漫", link: "https://www.agemys.cc/", area: "g"},
               {name: "樱花动漫", link: "https://www.yhdmz.org/", area: "g"},
               {name: "樱花动漫", link: "https://www.yinhuadm.cc/", area: "b"},
-              {name: "omoFun", link: "https://www.omofun.top/", area: "b"},
+              {name: "omoFun", link: "https://www.omofun.in/", area: "b"},
+              {name: "NyaFun", link: "https://www.nyafun.net/", area: "b"},
               {name: "MX动漫", link: "http://www.mxdm9.com/", area: "b"},
               {name: "奇奇动漫", link: "https://www.qiqidongman.com/", area: "g"},
               {name: "zzzFun", link: "http://www.zzzfun.com/", area: "b"},
@@ -123,14 +124,14 @@ export default {
           },
         ],
   }),
-methods:{
-  db(e) {
-    console.log(e.target)
-    if (this.$store.state.homepageExtra) {
-      this.$store.commit('s2p')
+  methods: {
+    db(e) {
+      console.log(e.target)
+      if (this.$store.state.homepageExtra) {
+        this.$store.commit('s2p')
+      }
     }
   }
-}
 }
 </script>
 
