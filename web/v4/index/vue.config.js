@@ -1,6 +1,5 @@
 const {defineConfig} = require('@vue/cli-service')
 module.exports = defineConfig({
-    outputDir: 'E:\\Projects\\kacg\\java\\spring_ref\\src\\main\\resources',
     transpileDependencies: [
         'vuetify'
     ],
