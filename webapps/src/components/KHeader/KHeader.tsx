@@ -4,7 +4,7 @@ import {
     defineRenter, makePropColor, makePropHeight,
     makePropTag, makePropWidth,
 } from "@/util/renderTools";
-import {useHeaderHeight} from "@/stores/useglobal";
+import useKApp from "@/stores/useKApp";
 
 export const KHeader = defineComponent({
     name: 'KHeader',
@@ -16,7 +16,7 @@ export const KHeader = defineComponent({
     },
     watch: {
         height(n) {
-            useHeaderHeight(n)
+            useKApp().setHeaderHeight(n)
         }
     },
     setup(props, {slots}) {
