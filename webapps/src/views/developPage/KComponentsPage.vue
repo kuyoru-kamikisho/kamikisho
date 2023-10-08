@@ -1,7 +1,9 @@
 <template>
 <k-app>
   <k-header></k-header>
-  <k-main></k-main>
+  <k-main>
+
+  </k-main>
 </k-app>
 </template>
 

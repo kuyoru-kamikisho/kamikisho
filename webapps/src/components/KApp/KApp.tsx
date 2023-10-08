@@ -5,6 +5,7 @@ import {
     makePropTag,
 } from "@/util/renderTools";
 import useKApp from "@/stores/useKApp";
+import {storeToRefs} from "pinia";
 
 export const KApp = defineComponent({
     name: 'KApp',
@@ -12,10 +13,14 @@ export const KApp = defineComponent({
         ...makePropTag(),
     },
     setup(props, {slots}) {
-        // useKApp().theme todo
+        const {theme} = storeToRefs(useKApp())
         defineRenter(() => (
             <props.tag
-                class={'k-app'}
+                class={[
+                    'k-app',
+                    'k-locale-ltr',
+                    'k-theme-' + theme.value
+                ]}
                 v-slots={slots}/>
         ))
         return {}

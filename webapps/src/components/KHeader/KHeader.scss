@@ -1,3 +1,11 @@
 .k-header {
   position: fixed;
+  height: var(--header-height);
+  width: 100%;
+}
+
+.k-theme-light {
+  .k-header {
+    background-color: rgb(47 45 49);
+  }
 }

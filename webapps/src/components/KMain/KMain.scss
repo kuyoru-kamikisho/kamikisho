@@ -1,3 +1,8 @@
 .k-main {
   width: 100%;
+  max-width: 100%;
+  padding-top: var(--header-height);
+  display: flex;
+  flex: 1 0 auto;
+  transition: .2s cubic-bezier(.4,0,.2,1);
 }

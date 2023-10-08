@@ -1,13 +1,22 @@
 .k-app {
+  width: 100vw;
+  height: 100vh;
+  font-family: "HanYiWenHei";
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  max-width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  position: relative;
+
   @font-face {
     font-family: "HanYiWenHei";
     src: local("汉仪文黑-85W"),
     url("../../assets/fonts/汉仪文黑-85W.TTF");
   }
-  width: 100vw;
-  height: 100vh;
-  font-family: "HanYiWenHei";
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-smoothing: antialiased;
+}
+
+.k-app.k-theme-light{
+  background-color: var(--theme-light-themecolor);
 }

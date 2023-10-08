@@ -12,7 +12,7 @@ export default defineStore('useKApp', {
                 height: 'calc(100% - 46px)'
             }
         },
-        theme: 'dark' as Themes
+        theme: 'light' as Themes
     }),
     actions: {
         setHeaderHeight(num: any) {
