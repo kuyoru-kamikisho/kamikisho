@@ -22,7 +22,10 @@ export const KHeader = defineComponent({
     setup(props, {slots}) {
         defineRenter(() => (
             <props.tag
-                class={'k-header'}
+                class={[
+                    'k-header',
+                    'elevation-2'
+                ]}
                 v-slots={slots}/>
         ))
         return {}

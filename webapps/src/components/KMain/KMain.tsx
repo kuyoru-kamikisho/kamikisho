@@ -14,7 +14,7 @@ export const KMain = defineComponent({
     setup(props, {slots}) {
         defineRenter(() => (
             <props.tag
-                class={'k-main scrollable-y scrollable'}
+                class={'k-main'}
                 v-slots={slots}/>
         ))
         return {}
