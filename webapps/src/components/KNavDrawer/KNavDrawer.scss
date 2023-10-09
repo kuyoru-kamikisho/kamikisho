@@ -1,0 +1,24 @@
+.k-nav-drawer {
+  position: fixed;
+  left: 0;
+  height: calc(100% - var(--header-height));
+  top: var(--header-height);
+  bottom: 0px;
+  width: var(--nav-drawer-width);
+  border-left-width: thin;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  transition-duration: .2s;
+  transition-property: box-shadow, transform, visibility, width, height, left, right, top, bottom;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  color: var(--theme-light-textcolor);
+  z-index: 1000;
+  user-select: none;
+}
+
+.k-theme-light {
+  .k-nav-drawer {
+    background-color: var(--theme-light-bgcolor);
+  }
+}

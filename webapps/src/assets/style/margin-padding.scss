@@ -2,6 +2,14 @@
   .ma-#{$i} {
     margin: 4px * $i;
   }
+  .mx-#{$i} {
+    margin-left: 4px * $i;
+    margin-right: 4px * $i;
+  }
+  .my-#{$i} {
+    margin-top: 4px * $i;
+    margin-bottom: 4px * $i;
+  }
   .mt-#{$i} {
     margin-top: 4px * $i;
   }
@@ -13,6 +21,14 @@
   }
   .ml-#{$i} {
     margin-left: 4px * $i;
+  }
+  .px-#{$i} {
+    padding-left: 4px * $i;
+    padding-right: 4px * $i;
+  }
+  .py-#{$i} {
+    padding-top: 4px * $i;
+    padding-bottom: 4px * $i;
   }
   .pa-#{$i} {
     padding: 4px * $i;

@@ -56,6 +56,18 @@ export function makePropColor() {
     return makeProp('color', String)
 }
 
+export function makePropLink(b = false) {
+    return makeProp('link', Boolean, b)
+}
+
+export function makePropDisabled() {
+    return makeProp('disabled', Boolean)
+}
+
+export function makePropRipple(b = false) {
+    return makeProp('ripple', Boolean, b)
+}
+
 export function makePropElevation() {
     return makeProp('elevation', [String, Number])
 }

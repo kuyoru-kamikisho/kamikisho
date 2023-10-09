@@ -1,22 +1,23 @@
 import './KHeader.scss'
 import {defineComponent} from "vue";
 import {
-    defineRenter, makePropColor, makePropHeight,
-    makePropTag, makePropWidth,
+    defineRenter, makePropHeight, makePropTag,
 } from "@/util/renderTools";
-import useKApp from "@/stores/useKApp";
+import {autoAddUnit} from "@/util";
+import {setRootvar} from "@/util/csssetters";
 
 export const KHeader = defineComponent({
     name: 'KHeader',
     props: {
         ...makePropTag('header'),
-        ...makePropWidth(),
-        ...makePropHeight(),
-        ...makePropColor(),
+        ...makePropHeight()
     },
     watch: {
         height(n) {
-            useKApp().setHeaderHeight(n)
+            if (n !== undefined) {
+                let hh = autoAddUnit(n);
+                setRootvar('--header-height', hh)
+            }
         }
     },
     setup(props, {slots}) {
@@ -24,7 +25,8 @@ export const KHeader = defineComponent({
             <props.tag
                 class={[
                     'k-header',
-                    'elevation-2'
+                    'elevation-1',
+                    'px-4'
                 ]}
                 v-slots={slots}/>
         ))

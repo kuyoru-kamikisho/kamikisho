@@ -1,0 +1,9 @@
+.k-list {
+  user-select: none;
+}
+
+.k-theme-light {
+  .k-list {
+    background-color: var(--theme-light-bgcolor);
+  }
+}
