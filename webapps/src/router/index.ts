@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from 'vue-router'
+import docssubpages from "@/router/docssubpages";
 
 const KHomePage = () => import("@/views/homePage/KHomePage.vue");
 const KComponentsPage = () => import("@/views/developPage/KComponentsPage.vue");
@@ -14,7 +15,8 @@ const router = createRouter({
         {
             path: '/docs/components',
             name: 'components',
-            component: KComponentsPage
+            component: KComponentsPage,
+            children: docssubpages
         }
     ]
 })

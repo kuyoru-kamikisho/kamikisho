@@ -32,6 +32,10 @@ export function makePropWidth() {
     return makeProp('width', [String, Number])
 }
 
+export function makePropTo() {
+    return makeProp('to', String)
+}
+
 export function makePropHeight() {
     return makeProp('height', [String, Number])
 }
