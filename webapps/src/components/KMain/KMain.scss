@@ -1,8 +1,6 @@
 .k-main {
-  width: 100%;
   max-width: 100%;
   padding: var(--header-height, 0) 0 0 var(--nav-drawer-width, 0);
-  display: flex;
   flex: 1 0 auto;
   transition: .2s cubic-bezier(.4, 0, .2, 1);
 }
