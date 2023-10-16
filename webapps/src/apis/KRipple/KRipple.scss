@@ -1,0 +1,14 @@
+.k-ripple {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  opacity: 0;
+  transform-origin: 0 0;
+  transform: scale(0) translate(-50%, -50%);
+  transition-property: opacity, transform;
+  transition-duration: .41s;
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+}

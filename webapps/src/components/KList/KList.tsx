@@ -1,8 +1,7 @@
 import './KList.scss'
 import {defineComponent} from "vue";
 import {
-    defineRenter, makePropDisabled, makePropLink, makePropRipple,
-    makePropTag,
+    defineRenter, makePropDisabled, makePropLink, makePropTag,
 } from "@/util/renderTools";
 
 export const KList = defineComponent({
@@ -10,7 +9,6 @@ export const KList = defineComponent({
     props: {
         ...makePropTag('ul'),
         ...makePropDisabled(),
-        ...makePropRipple(),
         ...makePropLink()
     },
     setup(props, {slots}) {

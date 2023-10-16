@@ -8,7 +8,7 @@
     </k-nav-drawer>
     <k-main>
       <k-sheet class="pa-4">
-        <router-view></router-view>
+<!--        <router-view></router-view>-->
       </k-sheet>
     </k-main>
   </k-app>

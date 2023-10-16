@@ -1,7 +1,7 @@
 import './KListItem.scss'
 import {defineComponent} from "vue";
 import {
-    defineRenter,
+    defineRenter, makePropRipple,
     makePropTag, makePropTo,
 } from "@/util/renderTools";
 import router from "@/router";
@@ -10,7 +10,8 @@ export const KListItem = defineComponent({
     name: 'KListItem',
     props: {
         ...makePropTag('li'),
-        ...makePropTo()
+        ...makePropTo(),
+        ...makePropRipple(true),
     },
     setup(props, {slots}) {
         function routerTo() {
@@ -26,6 +27,7 @@ export const KListItem = defineComponent({
                     'px-4 py-2',
                 ]}
                 onclick={routerTo}
+                v-ripple={props.ripple}
             >
                 <div class={'content_overlay'}></div>
                 <div class={'content_item'}>
