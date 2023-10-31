@@ -27,8 +27,10 @@ function updateRipple(el: HTMLElement, binding: DirectiveBinding, b: boolean) {
         div.style.left = ''
         div.style.top = ''
         div.style.transform = ''
+        div.style.opacity = ''
     }
     const dfn = (e: MouseEvent) => {
+        e.stopPropagation()
         resE()
         clearTimeout(removeing)
         el.appendChild(div)
@@ -45,7 +47,7 @@ function updateRipple(el: HTMLElement, binding: DirectiveBinding, b: boolean) {
             div.style.opacity = ''
             removeing = setTimeout(() => {
                 resE()
-            }, 410)
+            }, 280)
         }, 140)
     }
     el.addEventListener('mousedown', dfn)

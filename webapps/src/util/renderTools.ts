@@ -28,6 +28,10 @@ export function makePropPosition() {
     return makeProp('position', String)
 }
 
+export function makePropTitle(s = '') {
+    return makeProp('title', String, s)
+}
+
 export function makePropWidth() {
     return makeProp('width', [String, Number])
 }
@@ -64,8 +68,8 @@ export function makePropLink(b = false) {
     return makeProp('link', Boolean, b)
 }
 
-export function makePropDisabled() {
-    return makeProp('disabled', Boolean)
+export function makePropDisabled(b = false) {
+    return makeProp('disabled', Boolean, b)
 }
 
 export function makePropRipple(b = false) {

@@ -24,13 +24,12 @@ export const KListItem = defineComponent({
             <props.tag
                 class={[
                     'k-list-item',
-                    'px-4 py-2',
                 ]}
                 onclick={routerTo}
                 v-ripple={props.ripple}
             >
-                <div class={'content_overlay'}></div>
-                <div class={'content_item'}>
+                <div class={'k-content_overlay'}></div>
+                <div class={'k-content_item'}>
                     {slots.default?.()}
                 </div>
             </props.tag>

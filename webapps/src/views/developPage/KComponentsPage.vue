@@ -3,12 +3,42 @@
     <k-header>222</k-header>
     <k-nav-drawer>
       <k-list>
-        <k-list-item to="/docs/components/introduction">概述</k-list-item>
+        <k-list-group>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+        </k-list-group>
       </k-list>
     </k-nav-drawer>
     <k-main>
       <k-sheet class="pa-4">
-<!--        <router-view></router-view>-->
+        <!--        <router-view></router-view>-->
       </k-sheet>
     </k-main>
   </k-app>
@@ -22,6 +52,7 @@ import {KNavDrawer} from "@/components/KNavDrawer/KNavDrawer";
 import {KList} from "@/components/KList/KList";
 import {KListItem} from "@/components/KList/KListItem/KListItem";
 import {KSheet} from "@/components/KSheet/KSheet";
+import {KListGroup} from "@/components/KList/KListGroup/KListGroup";
 </script>
 
 <style lang="scss">

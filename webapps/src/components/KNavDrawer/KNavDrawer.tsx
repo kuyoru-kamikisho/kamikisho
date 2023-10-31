@@ -15,7 +15,8 @@ export const KNavDrawer = defineComponent({
             <props.tag
                 class={[
                     'k-nav-drawer',
-                    'elevation-1'
+                    'elevation-1',
+                    'scrollable',
                 ]}
                 v-slots={slots}/>
         ))
