@@ -4,35 +4,7 @@
     <k-nav-drawer>
       <k-list>
         <k-list-group>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
-          <k-list-item to="/docs/components/introduction">概述</k-list-item>
+          <k-list-item to="/docs/components/introduction" v-for="i in 24" :key="i">概述</k-list-item>
         </k-list-group>
       </k-list>
     </k-nav-drawer>
@@ -44,7 +16,7 @@
   </k-app>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import {KApp} from "@/components/KApp/KApp";
 import {KHeader} from "@/components/KHeader/KHeader";
 import {KMain} from "@/components/KMain/KMain";

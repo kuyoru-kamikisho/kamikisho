@@ -1,0 +1,1 @@
+export {KExpandTransition} from './KExpandTransition'

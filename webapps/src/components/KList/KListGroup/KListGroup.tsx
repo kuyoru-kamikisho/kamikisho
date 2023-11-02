@@ -1,9 +1,9 @@
 import './KListGroup.scss'
 import type {SlotsType} from "vue";
-import {defineComponent, ref, watch} from "vue";
+import {defineComponent, ref, Transition, watch} from "vue";
 import {
-    defineRenter, makePropDisabled, makePropRipple,
-    makePropTag, makePropTitle, makePropTo,
+    defineRenter, makePropColor, makePropDisabled, makePropDuration, makePropRipple,
+    makePropTag, makePropTitle, makePropTo, makePropTransition,
 } from "@/util/renderTools";
 
 export const KListGroup = defineComponent({
@@ -15,8 +15,10 @@ export const KListGroup = defineComponent({
     }>,
     props: {
         ...makePropTitle(),
+        ...makePropTransition('k-expand'),
         ...makePropTag('div'),
         ...makePropRipple(true),
+        ...makePropColor(),
         ...makePropDisabled(false),
         modelValue: Boolean
     },
@@ -26,12 +28,10 @@ export const KListGroup = defineComponent({
         watch(() => props.modelValue, n => trigger(n, true))
 
         function trigger(b: boolean, f?: boolean) {
-            console.log(f)
             if (!f)
                 if (props.disabled) return;
             open.value = b
             emit('update:modelValue')
-            console.log(b)
         }
 
         defineRenter(() => (
@@ -39,19 +39,24 @@ export const KListGroup = defineComponent({
                 class={[
                     'k-list-group'
                 ]}
-                v-ripple={props.ripple}
             >
-                <div class={'k-content_overlay'}></div>
                 <div class={'k-content_title'}
+                     v-ripple={props.ripple}
                      onClick={() => trigger(!open.value)}>
+                    <div class={'k-content_overlay'}></div>
                     88
                     {slots.title?.() || props.title}
                 </div>
-                {open.value ?
-                    (<div class={'k-content_item'}>
-                        {slots.default?.()}
-                    </div>)
-                    : null}
+                <Transition name={props.transition} mode="out-in">
+                    {
+                        open.value &&
+                        (
+                            <div class='k-content_item'>
+                                {slots.default?.()}
+                            </div>
+                        )
+                    }
+                </Transition>
 
             </props.tag>
         ))

@@ -1,0 +1,16 @@
+.k-expand-enter-active {
+  animation: k-expand_anime .2s cubic-bezier(0, .55, 1, .61);
+}
+
+.k-expand-leave-active {
+  animation: k-expand_anime .2s cubic-bezier(0, .55, 1, .61) reverse;
+}
+
+@keyframes k-expand_anime {
+  from {
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  to {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}

@@ -1,9 +1,9 @@
 import './KRipple.scss'
 import type {DirectiveBinding} from "vue";
 
-const div = document.createElement('div');
 
 function updateRipple(el: HTMLElement, binding: DirectiveBinding, b: boolean) {
+    const div = document.createElement('div');
     el.style.overflow = 'hidden'
     div.innerHTML =
         '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">' +
@@ -30,7 +30,6 @@ function updateRipple(el: HTMLElement, binding: DirectiveBinding, b: boolean) {
         div.style.opacity = ''
     }
     const dfn = (e: MouseEvent) => {
-        e.stopPropagation()
         resE()
         clearTimeout(removeing)
         el.appendChild(div)
@@ -47,8 +46,8 @@ function updateRipple(el: HTMLElement, binding: DirectiveBinding, b: boolean) {
             div.style.opacity = ''
             removeing = setTimeout(() => {
                 resE()
-            }, 280)
-        }, 140)
+            }, 210)
+        }, 210)
     }
     el.addEventListener('mousedown', dfn)
     el.addEventListener('mouseup', ufn)
@@ -63,7 +62,8 @@ function mounted(el: HTMLElement, binding: DirectiveBinding) {
 }
 
 function removeListeners(el: HTMLElement) {
-    div.remove()
+    const div = el.querySelector(".k-ripple");
+    div?.remove()
 }
 
 function unmounted(el: HTMLElement) {
@@ -86,8 +86,7 @@ function updated(el: HTMLElement, binding: DirectiveBinding) {
 
 export const Ripple = {
     mounted,
-    unmounted,
-    updated,
+    unmounted
 }
 
 export default Ripple

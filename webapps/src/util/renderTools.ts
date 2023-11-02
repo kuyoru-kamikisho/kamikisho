@@ -28,6 +28,10 @@ export function makePropPosition() {
     return makeProp('position', String)
 }
 
+export function makePropTransition(name?: string) {
+    return makeProp('transition', String, name)
+}
+
 export function makePropTitle(s = '') {
     return makeProp('title', String, s)
 }
@@ -42,6 +46,10 @@ export function makePropTo() {
 
 export function makePropHeight() {
     return makeProp('height', [String, Number])
+}
+
+export function makePropDuration(n?: string | number) {
+    return makeProp('duration', [String, Number], n)
 }
 
 export function makePropMinWidth() {
@@ -60,8 +68,8 @@ export function makePropMaxHeight() {
     return makeProp('maxHeight', [String, Number])
 }
 
-export function makePropColor() {
-    return makeProp('color', String)
+export function makePropColor(c?: string) {
+    return makeProp('color', String, c)
 }
 
 export function makePropLink(b = false) {
@@ -74,6 +82,14 @@ export function makePropDisabled(b = false) {
 
 export function makePropRipple(b = false) {
     return makeProp('ripple', Boolean, b)
+}
+
+export function makePropMode() {
+    return makeProp('mode', String)
+}
+
+export function makePropGroup() {
+    return makeProp('group', Boolean)
 }
 
 export function makePropElevation() {
