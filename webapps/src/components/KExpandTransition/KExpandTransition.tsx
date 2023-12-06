@@ -10,11 +10,42 @@ export const KExpandTransition = defineComponent({
         ...makePropMode()
     },
     setup(props, {slots}) {
-        defineRenter(() => (
-            (<Transition mode={props.mode} name="k-expand">
-                {slots.default?.()}
-            </Transition>)
-        ))
+        let elh = 0;
+
+        defineRenter(() => {
+            return (
+                (<Transition
+                    name={'k-expand'}
+                    onEnter={enter}
+                    onAfterEnter={afterEnter}
+                    onBeforeLeave={beforeLeave}
+                    onAfterLeave={afterLeave}
+                    mode={props.mode}>
+                    {slots.default?.()}
+                </Transition>)
+            );
+        })
+
+        function enter(el) {
+            elh = el.offsetHeight
+            el.style.setProperty('--kexh', elh + 'px')
+        }
+
+        function afterEnter(el) {
+            el.style.setProperty('--kexh', '')
+            el.style.height = ''
+        }
+
+        function beforeLeave(el) {
+            elh = el.offsetHeight
+            el.style.setProperty('--kexh', elh + 'px')
+        }
+
+        function afterLeave(el) {
+            el.style.height = ''
+            el.style.setProperty('--kexh', '')
+        }
+
         return {}
     },
 })

@@ -5,6 +5,7 @@ import {
     defineRenter, makePropColor, makePropDisabled, makePropDuration, makePropRipple,
     makePropTag, makePropTitle, makePropTo, makePropTransition,
 } from "@/util/renderTools";
+import {KExpandTransition} from "@/components/KExpandTransition";
 
 export const KListGroup = defineComponent({
     name: 'KListGroup',
@@ -14,8 +15,7 @@ export const KListGroup = defineComponent({
         title: { (): any }
     }>,
     props: {
-        ...makePropTitle(),
-        ...makePropTransition('k-expand'),
+        ...makePropTitle('T'),
         ...makePropTag('div'),
         ...makePropRipple(true),
         ...makePropColor(),
@@ -44,10 +44,9 @@ export const KListGroup = defineComponent({
                      v-ripple={props.ripple}
                      onClick={() => trigger(!open.value)}>
                     <div class={'k-content_overlay'}></div>
-                    88
                     {slots.title?.() || props.title}
                 </div>
-                <Transition name={props.transition} mode="out-in">
+                <KExpandTransition>
                     {
                         open.value &&
                         (
@@ -56,7 +55,7 @@ export const KListGroup = defineComponent({
                             </div>
                         )
                     }
-                </Transition>
+                </KExpandTransition>
 
             </props.tag>
         ))
