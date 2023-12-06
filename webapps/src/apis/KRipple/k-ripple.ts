@@ -6,17 +6,11 @@ function updateRipple(el: HTMLElement, binding: DirectiveBinding, b: boolean) {
     const div = document.createElement('div');
     el.style.overflow = 'hidden'
     div.innerHTML =
-        '<svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">' +
+        '<svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">' +
         '<circle cx="10" cy="10" r="10" />' +
         '</svg>'
 
-    let len = Math.round(
-            Math.sqrt(
-                Math.pow(el.offsetWidth, 2)
-                + Math.pow(el.offsetHeight, 2)
-            )),
-        mr = Math.round(len / 10),
-        removeing: any,
+    let removeing: any,
         leaveing: any;
 
 
@@ -30,15 +24,20 @@ function updateRipple(el: HTMLElement, binding: DirectiveBinding, b: boolean) {
         div.style.opacity = ''
     }
     const dfn = (e: MouseEvent) => {
+        let len = Math.round(
+                Math.sqrt(
+                    Math.pow(el.offsetWidth, 2)
+                    + Math.pow(el.offsetHeight, 2)
+                )),
+            mr = Math.round(len / 10),
+            mt = 50 / mr;
         resE()
         clearTimeout(removeing)
         el.appendChild(div)
-        let px = Math.floor(100 * e.offsetX / el.offsetWidth);
-        let py = Math.floor(100 * e.offsetY / el.offsetHeight);
         div.style.opacity = 'var(--btn-ripple-opacity)'
-        div.style.left = e.offsetX + 'px'
-        div.style.top = e.offsetY + 'px'
-        div.style.transform = `scale(${mr}) translate(-50%,-50%)`
+        div.style.left = e.clientX - el.offsetLeft + 'px'
+        div.style.top = e.clientY - el.offsetTop + 'px'
+        div.style.transform = `scale(${mr}) translate(-${mt}%,-${mt}%)`
     }
     const ufn = (e: MouseEvent) => {
         clearTimeout(leaveing)
