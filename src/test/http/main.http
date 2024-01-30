@@ -1,0 +1,8 @@
+GET http://{{domain1}}:{{port1}}/ping
+Accept: application/json
+
+###
+GET http://{{domain1}}:{{port1}}/ping/isAlive
+Accept: application/json
+
+###

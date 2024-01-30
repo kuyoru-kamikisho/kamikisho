@@ -1,0 +1,9 @@
+server:
+  port: 8081
+spring:
+  main:
+    banner-mode: off
+  web:
+    resources:
+      static-locations:
+        - file:./web-core
