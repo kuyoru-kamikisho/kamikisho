@@ -95,7 +95,7 @@ export default {
             List: [
               {name: "微博", link: "https://weibo.com/", area: "r"},
               {name: "米游社", link: "https://bbs.mihoyo.com/", area: "g"},
-              {name: "Twitter", link: "https://twitter.com/", area: "b"},
+              {name: "推特-X", link: "https://x.com/", area: "b"},
               {name: "OpenBase", link: "https://openbase.com/", area: "b"},
               {name: "Github", link: "https://github.com/", area: "b"},
               {name: "reddit", link: "https://www.reddit.com/", area: "b"},

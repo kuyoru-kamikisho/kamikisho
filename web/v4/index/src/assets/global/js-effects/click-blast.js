@@ -49,7 +49,7 @@ function clickEffect() {
             pointer.style.left = x + "px";
         }, false);
     } else {
-        console.log("canvas or addEventListener is unsupported!");
+        console.info("canvas or addEventListener is unsupported!");
     }
 
 

@@ -172,7 +172,6 @@ let Vtamago = {
           this.overlay = false
         }).catch((err) => {
           this.cleat('通信用魔法回廊发生了异常波动！再尝试一下')
-          console.log(err)
         })
       }
     },

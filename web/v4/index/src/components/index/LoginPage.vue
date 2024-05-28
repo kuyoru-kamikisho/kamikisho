@@ -444,7 +444,7 @@ export default {
         }).then((res)=>{
 
         }).catch((err)=>{
-          console.log('网络错误')
+          console.error('网络错误')
         })
       }
     },
@@ -458,7 +458,7 @@ export default {
         }).then((res)=>{
 
         }).catch((err)=>{
-          console.log('网络错误')
+          console.error('网络错误')
         })
       }
     },
