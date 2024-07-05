@@ -1,32 +1,14 @@
 <template>
   <div id="NavigationBar">
-    <v-app-bar
-        short
-        class="px-4"
-        tile
-        app
-        clipped-left
-        hide-on-scroll
-        fixed
-        fade-img-on-scroll
-        color="rgb(242 243 245 / 92%)"
-    >
+    <v-app-bar short class="px-4" tile app clipped-left hide-on-scroll fixed fade-img-on-scroll
+      color="rgb(242 243 245 / 92%)">
 
       <v-app-bar-nav-icon @click="homepageExCommit">
-        <img
-            class="k-nav-icon k-absolute k-cursor-pointer k-nav-img k-z-index-1"
-            src="../../assets/index/homepage/sitebar-icon.png"
-        />
+        <img class="k-nav-icon k-absolute k-cursor-pointer k-nav-img k-z-index-1"
+          src="../../assets/index/homepage/sitebar-icon.png" />
       </v-app-bar-nav-icon>
 
-      <v-tabs
-          show-arrows
-          background-color="transparent"
-          color="red accent-3"
-          centered
-          center-active
-          align-with-title
-      >
+      <v-tabs show-arrows background-color="transparent" color="red accent-3" centered center-active align-with-title>
         <v-tab @click="navCommit(0)">
           首页
         </v-tab>
@@ -85,7 +67,7 @@ export default {
       })
     },
     homepageExCommit() {
-      if (this.$store.state.s2p===true){
+      if (this.$store.state.s2p === true) {
         this.$store.commit('s2p')
       }
       this.$store.commit('navCloseItem')
@@ -103,11 +85,13 @@ export default {
    * 记录是否已经切换过主页面的显示内容
    */
   beforeCreate() {
-    if (localStorage.getItem('k_home') === 'on') {
+    let k_home = localStorage.getItem('k_home');
+    if (k_home === 'on' || k_home === null) {
       this.$store.commit({
         type: "homepageInit",
         k_home: true
       })
+      if(!k_home)localStorage.setItem('k_home', 'on')
     } else {
       this.$store.commit({
         type: "homepageInit",
@@ -156,7 +140,8 @@ export default {
     }
   }
 }
-.k-nav-img{
+
+.k-nav-img {
   width: 142px;
 }
 </style>

@@ -3,7 +3,6 @@
       id="section2"
       @dblclick.stop="db"
   >
-
     <v-sheet color="transparent" class="k-site-box-class k-relative" v-for="(topic,index) in site" :key="index">
 
       <a :id="topic.title" class="k-absolute k-element-penetrate"
@@ -43,21 +42,20 @@ export default {
             title: "动漫/漫画",
             List: [
               {name: "哔哩哔哩", link: "https://www.bilibili.com/", area: "g"},
-              {name: "哔哩哔哩港番", link: "https://space.bilibili.com/11783021", area: "b"},
-              {name: "风车动漫", link: "https://www.dm530w.org/", area: "g"},
               {name: "爱恋动漫BT", link: "https://www.kisssub.org/", area: "b"},
               {name: "AGE动漫", link: "https://www.agedm.org/", area: "g"},
-              {name: "樱花动漫", link: "https://www.yhdmz.org/", area: "g"},
-              {name: "樱花动漫", link: "https://www.yinhuadm.cc/", area: "b"},
+              {name: "樱花动漫", link: "https://m.yhdmw.cc/", area: "g"},
+              {name: "樱花动漫", link: "https://www.yinhuadm.vip/", area: "b"},
               {name: "omoFun", link: "https://www.omofun.in/", area: "b"},
               {name: "NyaFun", link: "https://www.nyafun.net/", area: "b"},
-              {name: "MX动漫", link: "http://www.mxdm9.com/", area: "b"},
+              {name: "MX动漫", link: "https://www.mxdm6.fans/", area: "b"},
               {name: "奇奇动漫", link: "https://www.qiqidongman.com/", area: "g"},
-              {name: "zzzFun", link: "http://www.zzzfun.com/", area: "b"},
+              {name: "ACG盒子", link: "https://myacg.pro/", area: "g"},
               {name: "Hanime1", link: "https://hanime1.me/", area: "r"},
               {name: "Kemono", link: "https://kemono.party/", area: "r"},
               {name: "NHentai", link: "https://nhentai.net/", area: "r"},
               {name: "漫画柜", link: "https://www.manhuagui.com/", area: "b"},
+              {name: "jump+", link: "https://shonenjumpplus.com/", area: "r"},
               {name: "古风漫画网", link: "https://www.123gf.com/", area: "g"},
               {name: "E-hentai", link: "https://e-hentai.org/", area: "r"},
               {name: "18comic", link: "https://18comic.vip/", area: "r"},
