@@ -44,13 +44,13 @@ export default {
               {name: "哔哩哔哩", link: "https://www.bilibili.com/", area: "g"},
               {name: "爱恋动漫BT", link: "https://www.kisssub.org/", area: "b"},
               {name: "AGE动漫", link: "https://www.agedm.org/", area: "g"},
+              {name: "咕咕番", link: "https://www.gugu3.com/", area: "g"},
+              {name: "MX动漫", link: "https://www.mxdm6.fans/", area: "b"},
+              {name: "NyaFun", link: "https://www.nyafun.net/", area: "b"},
               {name: "樱花动漫", link: "https://m.yhdmw.cc/", area: "g"},
               {name: "樱花动漫", link: "https://www.yinhuadm.vip/", area: "b"},
               {name: "omoFun", link: "https://www.omofun.in/", area: "b"},
-              {name: "NyaFun", link: "https://www.nyafun.net/", area: "b"},
-              {name: "MX动漫", link: "https://www.mxdm6.fans/", area: "b"},
               {name: "奇奇动漫", link: "https://www.qiqidongman.com/", area: "g"},
-              {name: "ACG盒子", link: "https://myacg.pro/", area: "g"},
               {name: "Hanime1", link: "https://hanime1.me/", area: "r"},
               {name: "Kemono", link: "https://kemono.party/", area: "r"},
               {name: "NHentai", link: "https://nhentai.net/", area: "r"},
@@ -59,6 +59,7 @@ export default {
               {name: "古风漫画网", link: "https://www.123gf.com/", area: "g"},
               {name: "E-hentai", link: "https://e-hentai.org/", area: "r"},
               {name: "18comic", link: "https://18comic.vip/", area: "r"},
+              {name: "ACG盒子", link: "https://myacg.pro/", area: "g"},
             ],
           },
           {
@@ -74,6 +75,17 @@ export default {
             ],
           },
           {
+            title: "社区",
+            List: [
+              {name: "微博", link: "https://weibo.com/", area: "r"},
+              {name: "米游社", link: "https://bbs.mihoyo.com/", area: "g"},
+              {name: "推特-X", link: "https://x.com/", area: "b"},
+              {name: "OpenBase", link: "https://openbase.com/", area: "b"},
+              {name: "Github", link: "https://github.com/", area: "b"},
+              {name: "reddit", link: "https://www.reddit.com/", area: "b"},
+            ],
+          },
+          {
             title: "工具",
             List: [
               {name: "Convertio", link: "https://convertio.co/zh/", area: "b"},
@@ -86,17 +98,6 @@ export default {
               {name: "百度网盘", link: "https://pan.baidu.com/", area: "g"},
               {name: "谷歌云盘", link: "https://drive.google.com/", area: "b"},
               {name: "Font1001", link: "https://www.1001fonts.com/", area: "b"},
-            ],
-          },
-          {
-            title: "社区",
-            List: [
-              {name: "微博", link: "https://weibo.com/", area: "r"},
-              {name: "米游社", link: "https://bbs.mihoyo.com/", area: "g"},
-              {name: "推特-X", link: "https://x.com/", area: "b"},
-              {name: "OpenBase", link: "https://openbase.com/", area: "b"},
-              {name: "Github", link: "https://github.com/", area: "b"},
-              {name: "reddit", link: "https://www.reddit.com/", area: "b"},
             ],
           },
           {
