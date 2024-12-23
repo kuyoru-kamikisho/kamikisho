@@ -5,7 +5,7 @@ import vue2 from '@vitejs/plugin-vue2'
 
 export default defineConfig({
     base: './',
-    publicDir: 'static',
+    publicDir: 'public',
     plugins: [
         vue2(),
         legacy({
