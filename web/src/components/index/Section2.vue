@@ -1,8 +1,5 @@
 <template>
-  <section
-      id="section2"
-      @dblclick.stop="db"
-  >
+  <section id="section2" @dblclick.stop="db">
     <v-sheet color="transparent" class="k-site-box-class k-relative" v-for="(topic,index) in site" :key="index">
 
       <a :id="topic.title" class="k-absolute k-element-penetrate"
@@ -47,7 +44,6 @@ export default {
               {name: "咕咕番", link: "https://www.gugu3.com/", area: "g"},
               {name: "MX动漫", link: "https://www.mxdm6.fans/", area: "b"},
               {name: "NyaFun", link: "https://www.nyafun.net/", area: "b"},
-              {name: "樱花动漫", link: "https://m.yhdmw.cc/", area: "g"},
               {name: "樱花动漫", link: "https://www.yinhuadm.vip/", area: "b"},
               {name: "omoFun", link: "https://www.omofun.in/", area: "b"},
               {name: "奇奇动漫", link: "https://www.qiqidongman.com/", area: "g"},
