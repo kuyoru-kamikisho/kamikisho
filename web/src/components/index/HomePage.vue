@@ -7,13 +7,12 @@
 </template>
 
 <script>
-import CentralIcon from "@/components/index/CentralIcon";
-import Section1 from "@/components/index/Section1";
-import Footer from "@/components/index/Footer";
+import CentralIcon from "@/components/index/CentralIcon.vue";
+import Section1 from "@/components/index/Section1.vue";
+import Footer from "@/components/index/Footer.vue";
 
 export default {
   name: "HomePage",
-
   components: {
     CentralIcon,
     Section1,

@@ -1,7 +1,5 @@
 <template>
-  <v-app
-      id="app"
-  >
+  <v-app id="app">
 
     <CursorCollimator></CursorCollimator>
 
@@ -50,18 +48,18 @@
 import "./assets/global/css-less/global.less"
 import "./assets/global/js-effects/sakura-float"
 // import "./assets/global/js-effects/click-blast.js"
-import NavigationBar from "@/components/index/NavigationBar";
-import LoginPage from "@/components/index/LoginPage";
-import SearchBar from "@/components/index/SearchBar";
-import HomePage from "@/components/index/HomePage";
-import ExtraPage from "@/components/index/ExtraPage";
-import Background from "@/components/index/Background";
-import S2Plugin from "@/components/index/S2-Plugin";
-import Constrain from "@/components/index/ConstraintsInfo"
-import Tamago from "@/components/index/Tamago";
-import Price from "@/components/index/Price";
-import PreviousWorks from "@/components/index/PreviousWorks";
-import CursorCollimator from "@/components/global/CursorCollimator";
+import NavigationBar from "@/components/index/NavigationBar.vue";
+import LoginPage from "@/components/index/LoginPage.vue";
+import SearchBar from "@/components/index/SearchBar.vue";
+import HomePage from "@/components/index/HomePage.vue";
+import ExtraPage from "@/components/index/ExtraPage.vue";
+import Background from "@/components/index/Background.vue";
+import S2Plugin from "@/components/index/S2-Plugin.vue";
+import Constrain from "@/components/index/ConstraintsInfo.vue"
+import Tamago from "@/components/index/Tamago.vue";
+import Price from "@/components/index/Price.vue";
+import PreviousWorks from "@/components/index/PreviousWorks.vue";
+import CursorCollimator from "@/components/global/CursorCollimator.vue";
 
 const app_main = {
   name: 'App',
@@ -79,13 +77,10 @@ const app_main = {
     PreviousWorks,
     CursorCollimator
   },
-
   data: () => ({
     myInfo: "App.vue",
   }),
-
   methods: {
-
     /**
      * Tab键调出搜索页
      * @param e
@@ -98,9 +93,7 @@ const app_main = {
         _this()
       }
     },
-
   },
-
   mounted() {
     document.addEventListener('keydown', (e) => this.hp(e))
   }

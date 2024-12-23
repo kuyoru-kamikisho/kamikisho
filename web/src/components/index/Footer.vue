@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import info from '../../assets/index/text/info.txt'
+import info from '../../assets/index/text/info.txt?raw'
 
 export default {
   name: "Footer",

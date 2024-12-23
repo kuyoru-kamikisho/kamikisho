@@ -12,8 +12,8 @@
 </template>
 
 <script>
-import SearchBar from "@/components/index/SearchBar";
-import Section2 from "@/components/index/Section2";
+import SearchBar from "@/components/index/SearchBar.vue";
+import Section2 from "@/components/index/Section2.vue";
 
 export default {
   name: "ExtraPage",

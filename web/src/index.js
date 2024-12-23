@@ -4,7 +4,7 @@ import vuetify from './plugins/vuetify'
 import axios from "axios";
 import VueAxios from "vue-axios";
 import store from "./plugins/vuex";
-import animated from 'animate.css'
+import 'animate.css'
 
 Vue.use(VueAxios, axios)
 Vue.config.productionTip = false
