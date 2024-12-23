@@ -1,13 +1,11 @@
 {
   "name": "index",
-  "version": "4.0.04",
+  "version": "4.1.0",
   "private": true,
   "type": "module",
   "scripts": {
     "build": "vite build",
-    "dev": "vite",
-    "vs": "vue-cli-service serve",
-    "vb": "vue-cli-service build"
+    "dev": "vite"
   },
   "dependencies": {
     "animate.css": "3.5.1",
