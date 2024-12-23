@@ -11,7 +11,7 @@
     </div>
     <div id="i" class="k-fixed">
       <v-img gradient="to bottom, rgba(100, 115, 201, 0.13), rgba(25, 32, 72, 0.7)" width="100vw" min-height="100vh"
-             :src="huttsky" :lazy-src="huttsky64" position="center -64px"></v-img>
+             :src="huttsky" :lazy-src="huttsky64"></v-img>
     </div>
     <p v-html="huttskyInfo" class="k-fixed k-img-info"></p>
   </div>
