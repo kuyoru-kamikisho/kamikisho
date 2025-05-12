@@ -40,10 +40,10 @@ export default {
             List: [
               {name: "哔哩哔哩", link: "https://www.bilibili.com/", area: "g"},
               {name: "爱恋动漫BT", link: "https://www.kisssub.org/", area: "b"},
-              {name: "AGE动漫", link: "https://www.agedm.org/", area: "g"},
+              {name: "AGE动漫", link: "https://www.agefans.la/", area: "g"},
               {name: "MX动漫", link: "https://www.mxdm6.fans/", area: "b"},
               {name: "咕咕番", link: "https://www.gugu3.com/", area: "g"},
-              {name: "NyaFun", link: "https://www.nyafun.net/", area: "b"},
+              {name: "NyaFun", link: "https://www.nyafun.org/", area: "b"},
               {name: "樱花动漫", link: "https://www.yinhuadm.vip/", area: "b"},
               {name: "omoFun", link: "https://www.omofun.in/", area: "b"},
               {name: "奇奇动漫", link: "https://www.qiqidongman.com/", area: "g"},
@@ -55,7 +55,7 @@ export default {
               {name: "古风漫画网", link: "https://www.123gf.com/", area: "g"},
               {name: "E-hentai", link: "https://e-hentai.org/", area: "r"},
               {name: "18comic", link: "https://18comic.vip/", area: "r"},
-              {name: "ACG盒子", link: "https://myacg.pro/", area: "g"},
+              {name: "ACG盒子", link: "https://www.acgbox.link/", area: "g"},
             ],
           },
           {
