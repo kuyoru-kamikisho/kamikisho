@@ -40,7 +40,7 @@ export default {
             List: [
               {name: "哔哩哔哩", link: "https://www.bilibili.com/", area: "g"},
               {name: "爱恋动漫BT", link: "https://www.kisssub.org/", area: "b"},
-              {name: "AGE动漫", link: "https://www.agedm.vip/", area: "g"},
+              {name: "AGE动漫", link: "http://www.age.tv/", area: "g"},
               {name: "MX动漫", link: "https://www.mxdm6.fans/", area: "b"},
               {name: "咕咕番", link: "https://www.gugu3.com/", area: "g"},
               {name: "NyaFun", link: "https://www.nyafun.org/", area: "b"},
